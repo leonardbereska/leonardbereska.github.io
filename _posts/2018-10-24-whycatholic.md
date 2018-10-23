@@ -86,8 +86,8 @@ And by the way, I also do not see, what is so patriarchical about the West? The 
 **Simplidealo**: There is still a lot of systemic sexism and racism in our capitalistic society. We would need a revolution to fix all this.
 
 
-**Reasonoblis**: Revolutions almost never fix anything, I **believe* progress comes through gradual adaption and evolution. Apart from that, I think we are pretty close to paradise already.
-I am just not sure how long this will last, especially with the losing of **faith* in our values in combination with a resurgence of leftist extremism. And muslim regressives are on the rise as well.
+**Reasonoblis**: Revolutions almost never fix anything, I *believe* progress comes through gradual adaption and evolution. Apart from that, I think we are pretty close to paradise already.
+I am just not sure how long this will last, especially with the losing of *faith* in our values in combination with a resurgence of leftist extremism. And muslim regressives are on the rise as well.
 
 
 **Simplidealo**: Leftist extremism?! Are you against helping the poor? Capitalism creates poverty, capitalism is cruel. Are you against helping the refugees of Western colonialism? It is just fair, that we share our wealth with them.
@@ -138,7 +138,7 @@ If you are ultimately worth nothing, what does it matter that an islamist does o
 **Simplidealo**: You shall not question human rights! Remember the last time someone disregarded human rights! There are just some things we should not question anymore!.
 
 
-**Reasonoblis**: You mean Hitler?! He was only able to convince so many people, because they had lost their **faith*.
+**Reasonoblis**: You mean Hitler?! He was only able to convince so many people, because they had lost their *faith*.
 
 
 **Simplidealo**: I think we should end the discussion now.
@@ -160,6 +160,7 @@ and our society is headed towards horrible.
 
 
 After all, what do they *believe*?:
+
 **Reasonoblis**: Devout Catholic. Progressive liberal Neo-Conservative.
 **Simplidealo**: Social Justice Warrior. Regressive Neo-Marxist. Racist against white men.
 
