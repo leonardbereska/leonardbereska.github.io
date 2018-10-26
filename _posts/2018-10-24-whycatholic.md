@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Why Catholic"
+title:  "Why Catholic?"
 date:   2018-10-23 23:13:33 +0200
 categories: jekyll update
 ---
