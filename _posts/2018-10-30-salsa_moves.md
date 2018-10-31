@@ -39,7 +39,7 @@ N °@o @mo $ C xbl@ p.. @°° >< @b X. p. << X @..@m/2 >>. xbl X. p. #s @m3/2 °
 N xbl@ C @ N @ KL @ @ HL @ xbl@°° >< @b X @°° ?°° @°° @m/2 >>. xbl@ X p. @#s@m X @ SM. @.#s .<<° n @ e° °X. xbl@ TT @ X e°° N @o .p 5x@i C@ d C @ @m $
 
 # YouTube Moves
-20. []N p.. @.. (>< @b)
+20. [] N p.. @.. (>< @b) [watch](https://www.youtube.com/watch?v=t39C2rq_PWo&list=PLzQLYa4i8-6ttepSkMUotELuuWBWZX63g&index=11)
 21. []N @°
 22. ! []N @ xh°. xbl
 23. [x] X @ HL @
@@ -57,7 +57,7 @@ N xbl@ C @ N @ KL @ @ HL @ xbl@°° >< @b X @°° ?°° @°° @m/2 >>. xbl@ X p.
 35. ! [] .X° @°° ?°° @°°
 36. ! [].N @m HLm em.°
 37. !! []  N xbl°@. KL xbl# ..h°° @
-38. []( N .p @b)
+38. []  N .p @b
 39. []N .p C @b .p N
 40. !
 41. ![] N xbl .@° rHL °h° xbl
