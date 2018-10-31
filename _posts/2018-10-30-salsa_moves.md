@@ -40,7 +40,7 @@ N xbl@ C @ N @ KL @ @ HL @ xbl@°° >< @b X @°° ?°° @°° @m/2 >>. xbl@ X p.
 
 # YouTube Moves
 20. [] N p.. @.. (>< @b) [watch](https://www.youtube.com/watch?v=t39C2rq_PWo&list=PLzQLYa4i8-6ttepSkMUotELuuWBWZX63g&index=11)
-21. []N @°
+21. []N @° [watch](https://www.youtube.com/watch?v=1g322euzmBQ)
 22. ! []N @ xh°. xbl
 23. [x] X @ HL @
 24.  [x]X @ SM xbl
