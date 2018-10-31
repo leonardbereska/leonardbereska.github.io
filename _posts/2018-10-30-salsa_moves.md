@@ -7,7 +7,7 @@ categories: jekyll update
 
 
 # Salsa Lessons 1
-1.  N &w @
+1. N &w @
 2. X @°° S. @°# @
 3. N @ @@@@@ C @ d
 4. N @ HL @ N hook xbl @°° >< @ X.
@@ -27,9 +27,12 @@ categories: jekyll update
 - X e° °e em° °em
 - .N @m HLm em.°
 - N xbl .@° rHL °h° xbl
-- (N/X .p #s @m .p #s @m)
-- (N @ @@@@@ C @ d)
+- X .p #s @m .p #s @m
+- N @ @@@@@ C @ d
 - .X° @ °X. @ @m HLm p(elbow)
+- X @ SM. @ #s @
+- N @ HL @ xbl° @°° >< @mw X
+- X. p. >< X @°°
 
 # Free Dance
 N °@o @mo $ C xbl@ p.. @°° >< @b X. p. << X @..@m/2 >>. xbl X. p. #s @m3/2 °xh.  .>>. @°° X @°° ?°° @°° .<<° … @o X °e xbl N @o 5x@i C @ d xbl &f @ Sc N &m
