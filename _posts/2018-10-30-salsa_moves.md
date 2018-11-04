@@ -49,6 +49,13 @@ e.g.
 22. N @ xh°. xbl [watch](https://www.youtube.com/watch?v=1g322euzmBQ)
 
 [Advanced](https://www.youtube.com/watch?v=RsusizwLkXg&ab\_channel=SkandWood)
-1. C xbl@@ xh °S. @@ HL @wm N @/2m xhh °°@@i xhh @o°° N xhh N @°° @@m .N @!s @m .N @/2mxhb X>>. xh. @wm  xbl
-
-
+# TG
+C xbl@@ xh °S. @@ HL @wm N @/2m xhh °°@@i xhh @o°° N xhh N @°° @@m .N @!s @m .N @/2mxhb X>>. xh. @wm  xbl
+# JM
+N xbl@m X>>. .X°S TT .@ .W<< @xh S. xh .W>< @/2<< xh S. @° em@m(cocote) N. .hN° .h<< @ .hN >> @wm Cxbl
+# NF
+C xbl .N° @@i @/2m xbl(hip)@i >> n!(hip)u X>>. .<<° @i @/2m °>> xhb. >>.HL °@@/2. @/2m xhh @ C xbl N
+# JM 2
+# NF 2
+# TG 2
+N xbl °Nh. ? @mxh X. z. .h<<. .h@ xbl .N. °@°c °@m°o N °@/2°o .@@/2mc° HLm >< @@/2 .N @/2m X>>. xbl @@/2m C xbl N. °@@@/2 <<.!
