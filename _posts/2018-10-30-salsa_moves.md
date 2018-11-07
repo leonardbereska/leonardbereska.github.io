@@ -19,7 +19,7 @@ categories: jekyll update
 # Salsa Lessons 2
 1. N @ HL @o @m HLm ? @mo N p.. @°° Nx SM°. @°. SM.° @.° SMm.° xh°. <<  p.b .@ xbl N
 2. N .p xhb.. HLr. @ @m xhbm .N .z @/2!b °S. p.b@/2 .N .z @/2!b p.b@/2 @/2m X° n z° °!s TT° n @@ X. z. S° p°s .N xbl N
-
+3. .N. z.. @.. KLr .s. KL(hp) .s. KLr .s° .KL(sr)° @ °N(sr). @ .N(sr)° z S(sr) @ Nx °xh. °°xh @ °N(sr). @ .N(sr)° z S(sr) n @@/2 X.
 
 # Repertoire
 - N p.. @.. (>< @b)
