@@ -11,12 +11,13 @@ categories: jekyll update
 The shooting was horrible,
 the shooting people were horrible.
 and the people shot were horrible.
-
-
----
  
 How do they manage to disagree at all?
 And what do they *believe*?
+
+
+---
+
 
 **Reasonoblis**: Did you hear of that islamists shooting up that writer?
 
