@@ -12,24 +12,26 @@ The shooting was horrible,
 the shooting people were horrible.
 and the people shot were horrible.
 
+-- 
+ 
 How do they manage to disagree at all?
 And what do they *believe*?
 
 **Reasonoblis**: Did you hear of that islamists shooting up that writer?
 
 
-**Simplidealo**: Yes, that was horrible. But why is it worth mentioning that they were  muslim? These are radical terrorists and not true *believers*.
+**Simplidealo**: Yes, that was horrible. But why is it worth mentioning, that they were muslims? They were radical terrorists and not true *believers*.
 
 
 **Reasonoblis**: I don't seem to see what you mean, at the same time, I completely agree with what you are saying:
-They are radical, and terrorists, and most certainly have false *beliefs*. But this almost the definition of Islamism, don't you think?
+They are radical, and terrorists, and most certainly have false *beliefs*. But this is almost the definition of Islamism, don't you think?
 
 
-**Simplidealo**: Islam is a religion like every other. False. Nevertheless we need to respect and tolerate every religion and culture equally. This is our core value. This is also why I also condemn the racist writings of that writer. She just wanted to stir up hate. Maybe it had to come this way after all.
+**Simplidealo**: Islam is a religion like every other. False. Despite its falsehood, we need to respect and tolerate every religion and culture equally. This is our core value. This is also why I also condemn the racist writings of that writer. She just wanted to stir up hate. Maybe it had to come this way after all.
 
 
-**Reasonoblis**: 'It was god's revenge', that's what they would say.
-But why racist? I don't like that writer, that's for sure, she is also making fun of the pope and the Catholic church.
+**Reasonoblis**: 'It was god's revenge', that's what they would say...
+But why racist? I don't like that writer, that's for sure, she is also making fun of the pope and the Catholic church and that is horrible.
 But what does being muslim have to do with race?
 
 
@@ -39,7 +41,7 @@ But what does being muslim have to do with race?
 **Reasonoblis**: Not ok? Maybe. It is not racism, though. Don't get me wrong, I respect people of every color or race, but what people *believe* is important to me. If these men want to implement god's plan by following the Quran like the instructions for building an IKEA shelf, their *beliefs* are dangerous beyond *belief*.
 
 
-**Simplidealo**: As if they would care about this stupid book. This is a politicial move. Muslims feel alienated in our Western culture. We completely failed at integrating them and the average German man is a racist, not to mention that writer. No wonder they are frustrated. If someone writes racist slur, then these are the logical consequences.
+**Simplidealo**: As if they would care about this stupid book. This is a politicial move. Muslims feel alienated in our Western culture. We completely failed at integrating them and the average German man is a racist, not to mention that writer. No wonder that they are frustrated. If someone writes racist slur, then these are the logical consequences.
 
 
 **Reasonoblis**: Frustrated!? Why shouldn't they care about the Quran? It is holy to them after all.
@@ -60,17 +62,17 @@ But what does being muslim have to do with race?
 **Simplidealo**: But you can say that of any religion. Religion is just the opium of the masses, in a capitalistic society it drugs and oppresses the average man. Did you never hear about that?
 
 
-**Reasonoblis**: I thought you *believe* the average man is a racist... Anyway, religion is older and more meaningful than capitalism for sure. But concerning capitalism: except from its excesses, and except from the *belief* that a human being is worth what he earns - a protestant confusion called predestination theory - except from that, what is so bad about capitalism?
+**Reasonoblis**: Is the average man now a racist oppressor or an oppressed opium addict?... Anyway, religion is older and more meaningful than capitalism, that is for sure. But concerning capitalism: except from its excesses, and except from the *belief* that a human being is worth what he earns - a protestant confusion called predestination theory - except from that, what is so bad about capitalism?
 
 
 **Simplidealo**: Our whole capitalistic patriarchy is racist and flawed. The white men in power are oppressing everybody else.
 
 
-**Reasonoblis**: Why white and why men? Everyone can be a racist. If you see another human being as created equally to yourself, you can escape racism though.
-Take Jesus to heart and you are truly good, in this regard.
+**Reasonoblis**: Why white and why men? Everyone can be a racist. If you know how to see gods image in another human, you can escape racism though.
+Take Jesus to heart and you are truly good - in this regard.
 
 
-**Simplidealo**: Don't forget about the history. White men were the most racist historically just like Christianity has been just as cruel as Islam historically.
+**Simplidealo**: Don't forget about the history. White men were the most racist historically, just like Christianity has been just as cruel as Islam.
 
 
 **Reasonoblis**: Didn't you say Islam is peaceful?
@@ -79,8 +81,8 @@ Take Jesus to heart and you are truly good, in this regard.
 **Simplidealo**: Most muslims are peaceful. The extemists are just like the crusaders though.
 
 
-**Reasonoblis**: You mean Jihadists? Except from both being bloodthirsty rapists, they not comparable to crusaders at all: the crusaders were not modelling their life after Jesus, whereas Mohammed was a warlord. At the time, the crusades where the desparate last try to combine the knighthood values with Christianity. But it is obvious that a knight and Jesus are the antithesis towards each other.
-And by the way, I also do not see, what is so patriarchical about the West? The West invented feminism after all. Feminism is born out of our core human values. These human values evolved out of Christianity. The idea of an integral core of being, the soul, is fundamental. Compared to all other cultures (not only islamic culture) we are the saints here, aren't we?
+**Reasonoblis**: You mean Jihadists? Except from both being bloodthirsty rapists, they not comparable to crusaders at all: the crusaders were not modelling their life after Jesus and were bad Christians in the Christian sense, whereas Mohammed was a warlord himself, an idol for every Jihadi. At the time, the crusades where the desperate last try to combine the knighthood values with Christianity. But it is obvious that a knight and Jesus are antithetical towards each other.
+And by the way, I also do not see: what is so patriarchical about the West? The West invented feminism after all. Feminism is born out of our core human values. These human values evolved out of Christianity. The idea of an integral core of being, the soul, the essence of God, is fundamental. Compared to all other cultures (not only islamic culture) we are the *saints* here, aren't we?
 
 
 **Simplidealo**: There is still a lot of systemic sexism and racism in our capitalistic society. We would need a revolution to fix all this.
@@ -90,16 +92,16 @@ And by the way, I also do not see, what is so patriarchical about the West? The 
 I am just not sure how long this will last, especially with the losing of *faith* in our values in combination with a resurgence of leftist extremism. And muslim regressives are on the rise as well.
 
 
-**Simplidealo**: Leftist extremism?! Are you against helping the poor? Capitalism creates poverty, capitalism is cruel. Are you against helping the refugees of Western colonialism? It is just fair, that we share our wealth with them.
+**Simplidealo**: Leftist extremism?! The Left is the only good side! Or are you against helping the poor? Capitalism creates poverty, capitalism is cruel. Are you against helping the refugees of Western colonialism? It is just fair, that we share our wealth with them.
 
 
-**Reasonoblis**: What now does it create, poverty or wealth? And what is fair? What is just? And who are we? I think we should help them for sure, they are desparate souls calling to our Christian duty. I am just concerned about their *beliefs*. This wouldn't be a problem if they were all progressive Catholics like me, but most of them are very conservative, I mean conservative in the patriarchal sense, not the neo-conservative sense. Not to speak of the small, but considerable number of violent jihadists and religous maniacs among them.
+**Reasonoblis**: What now does it, capitalism, now create: poverty or wealth? And what is fair? What is just? I think we should help them for sure, they are desparate souls calling to our Christian duty. I am just concerned about their *beliefs*. This wouldn't be a problem if they were all progressive Catholics like me, but most of them are very conservative, I mean conservative in the regressive patriarchal sense, not the neo-conservative sense. Not to speak of the small, but considerable number of violent jihadists and religous maniacs among them.
 
 
 **Simplidealo**: Progressive Catholicism? I might understand if this is said about Protestantism. Although the Protestant revolution has been a while ago.., but Catholicism? Seriously?
 
 
-**Reasonoblis**: I think you are confusing protestants with non-*believers*, which most of the so-called protestants are in fact. Strict protestants are people of the book. Like Muslims. Tied to the literal sense of old words. Catholics are more liberal, the Holy church is interpreting the revelation and metaphorical truth in the book. This leaves room for the evolution of God.
+**Reasonoblis**: I think you are confusing protestants with non-*believers*, which most of the so-called protestants are in fact. Strict protestants are people of the book. Like Muslims. Tied to the literal sense of old words. Catholics are more liberal, the Holy church is interpreting the revelation and metaphorical truth in the book. This leaves room for the *evolution of God*.
 
 
 **Simplidealo**: What do you mean by the evolution of God?
@@ -135,10 +137,10 @@ What do you *believe* then, if you don't *believe* in Evolution theory?
 If you are ultimately worth nothing, what does it matter that an islamist does or does not kill you?
 
 
-**Simplidealo**: You shall not question human rights! Remember the last time someone disregarded human rights! There are just some things we should not question anymore!.
+**Simplidealo**: You shall not question human rights! Remember the last time someone disregarded human rights! There are just some things we should not question anymore!
 
 
-**Reasonoblis**: You mean Hitler?! He was only able to convince so many people, because they had lost their *faith*.
+**Reasonoblis**: Not question? Because of Hitler?! He was only able to convince so many people, because they had lost their *faith* and values.
 
 
 **Simplidealo**: I think we should end the discussion now.
@@ -158,6 +160,7 @@ and our society is headed towards horrible.
 
 **Simplidealo**: I agree.
 
+---
 
 After all, what do they *believe*?:
 
