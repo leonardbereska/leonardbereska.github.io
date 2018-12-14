@@ -12,7 +12,8 @@ The shooting was horrible,
 the shooting people were horrible.
 and the people shot were horrible.
 
--- 
+
+---
  
 How do they manage to disagree at all?
 And what do they *believe*?
@@ -81,11 +82,12 @@ Take Jesus to heart and you are truly good - in this regard.
 **Simplidealo**: Most muslims are peaceful. The extemists are just like the crusaders though.
 
 
-**Reasonoblis**: You mean Jihadists? Except from both being bloodthirsty rapists, they not comparable to crusaders at all: the crusaders were not modelling their life after Jesus and were bad Christians in the Christian sense, whereas Mohammed was a warlord himself, an idol for every Jihadi. At the time, the crusades where the desperate last try to combine the knighthood values with Christianity. But it is obvious that a knight and Jesus are antithetical towards each other.
-And by the way, I also do not see: what is so patriarchical about the West? The West invented feminism after all. Feminism is born out of our core human values. These human values evolved out of Christianity. The idea of an integral core of being, the soul, the essence of God, is fundamental. Compared to all other cultures (not only islamic culture) we are the *saints* here, aren't we?
+**Reasonoblis**: You mean Jihadists? Except from both being bloodthirsty rapists, they are not comparable to crusaders at all: the crusaders were not modelling their life after Jesus. They were bad Christians in Jesus sense, whereas Mohammed was a warlord himself, an idol for every Jihadi. At the time, the crusades where the desperate last attempt to combine Christianity with medival knighthood and honor values. But it became obvious at the time already, that a knight and Jesus are antithetical towards each other.
+
+And by the way, what is so patriarchical about the West? The West invented feminism after all. Feminism is born out of our core human values. These human values evolved out of Christianity. The idea of an integral core of being, the soul, the essence of God, is fundamental. Compared to all other cultures (not only islamic culture) we are the *saints* here, aren't we? Western values are supreme in their non-patriarchicality, aren't they?
 
 
-**Simplidealo**: There is still a lot of systemic sexism and racism in our capitalistic society. We would need a revolution to fix all this.
+**Simplidealo**: There is still a lot of systemic sexism and racism in our capitalistic society, though. We would need a revolution to fix all this.
 
 
 **Reasonoblis**: Revolutions almost never fix anything, I *believe* progress comes through gradual adaption and evolution. Apart from that, I think we are pretty close to paradise already.
