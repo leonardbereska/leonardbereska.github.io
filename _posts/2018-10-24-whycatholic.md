@@ -168,5 +168,5 @@ and our society is headed towards horrible.
 After all, what do they *believe*?:
 
 **Reasonoblis**: Devout Catholic. Progressive liberal Neo-Conservative.
-**Simplidealo**: Social Justice Warrior. Regressive Neo-Marxist. Racist against white men.
+**Simplidealo**: Social Justice Warrior. Regressive Neo-Marxist. Racist and Sexist against White Men.
 
