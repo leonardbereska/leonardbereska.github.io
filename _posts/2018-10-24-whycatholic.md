@@ -6,7 +6,7 @@ categories: jekyll update
 ---
 
 
-**Reasonoblis** and **Simplidealo** agree and disagree quite reasonably. The day before, a German satire writer and several members of his office have been shot. The reasons and subjectives behind that are subject to reasonable discussion:
+**Reasonoblis** and **Simplidealo** agree and disagree quite reasonably. The day before, a German satire writer and several members of his office have been shot. The reasons and subjectives behind that atrocity are subject to reasonable discussion:
 **Reasonoblis** and **Simplidealo** agree on:
 The shooting was horrible,
 the shooting people were horrible.
