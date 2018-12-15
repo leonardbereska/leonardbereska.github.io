@@ -25,12 +25,14 @@ categories: jekyll update
 7. Rueda
 7. N xbl @HL @ N @m &(arms)
 8. N p.. @HL p(hp) @ N hg sg .z xh Sc. sg hg(xh(bk)m) sg hg(wrap) @b @ .N , xbl d
+9. Rueda
 
 
 # Salsa Lessons (Beginner)
 1. N S. .S S. .S xh Sx p. sg hg sg 
 2. N @°° °X. @xbl .X° @ SM cc(sr) C, N KL N sg Sc xbl N 
 3. C xbl N @ HL @ N hg sg Sc xbl cc C , "manjana" hg@b  
+4. N z.. @ HL @ N xbl(lb)
 
 # Repertoire
 - N p.. @.. (>< @b)
@@ -45,6 +47,17 @@ categories: jekyll update
 - N @ HL @ xbl.°(elbow) @°° >< @mw X
 - X. p. >< X @°°
 - N p. .@°i >> xhrl z.. @ N
+
+# Practice
+- X @ TT 
+- @m $
+- HL @ N xbl @°° >< @b 
+- N @ KL 
+
+
+# Future
+- leading at hip, head
+- foot styling
 
 # Free Dance
 N °@o @mo $ C xbl@ p.. @°° >< @b X. p. << X @..@m/2 >>. xbl X. p. #s @m3/2 °xh.  .>>. @°° X @°° ?°° @°° .<<° … @o X °e xbl N @o 5x@i C @ d xbl &f @ Sc N &m
