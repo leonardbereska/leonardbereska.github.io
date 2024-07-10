@@ -1,0 +1,358 @@
+{
+    "basics": {
+      "name": "Leonard Friedrich Bereska",
+      "label": "AI Safety Researcher",
+      "image": "",
+      "email": "&#108;&#101;&#111;&#110;&#97;&#114;&#100; [dot] &#98;&#101;&#114;&#101;&#115;&#107;&#97; [at] &#117;&#118;&#97; [dot] &#110;&#108;",
+      "url": "https://leonardbereska.github.io/",
+      "summary": "PhD Candidate at the University of Amsterdam, specializing in AI Safety and Mechanistic Interpretability. Focused on making AI systems more transparent, interpretable, and aligned with human values.",
+      "location": [
+        {
+        "address": "4.125, LAB42, Science Park 900",
+        "postalCode": "1098XH",
+        "city": "Amsterdam",
+        "countryCode": "NL",
+        "region": "Netherlands"
+        }
+      ],
+      "profiles": [
+        {
+          "network": "LinkedIn",
+          "username": "leonard-bereska",
+          "url": "https://www.linkedin.com/in/leonard-bereska/"
+        }
+      ]
+    },
+  "work": [
+        {
+          "name": "University of Amsterdam",
+          "position": "PhD Candidate",
+          "url": "https://www.uva.nl/en",
+          "startDate": "2021-10",
+          "endDate": "Present",
+          "summary": "Pioneering transformer model interpretability through monosemanticity engineering for enhanced AI safety. Focused on AI Alignment strategies to ensure long-term value preservation.",
+          "highlights": ["AI Safety", "Mechanistic Interpretability", "Transformer Models", "Monosemanticity Engineering"]
+        },
+        {
+          "name": "University of Heidelberg",
+          "position": "Research Assistant",
+          "url": "https://www.uni-heidelberg.de/en",
+          "startDate": "2019-02",
+          "endDate": "2021-09",
+          "summary": "Infused dendritic computation principles into neural networks. Explored novel optimization criteria for dynamical systems.",
+          "highlights": ["Dendritic Computation", "Neural Networks", "Dynamical Systems"]
+        },
+        {
+          "name": "Central Institute of Mental Health",
+          "position": "Research Intern",
+          "url": "https://www.zi-mannheim.de/en/",
+          "startDate": "2017-08",
+          "endDate": "2017-10",
+          "summary": "Investigated initialization schemes for a piecewise-linear recurrent neural network using expectation-maximization.",
+          "highlights": ["Recurrent Neural Networks", "Initialization Schemes", "Expectation-Maximization"]
+        }
+      ],
+    "volunteer": [
+      {
+        "organization": "AI Safety Initiative Amsterdam",
+        "location": "Amsterdam, Netherlands",
+        "position": "Co-founder and Core Team Member",
+        "url": "https://aisafetyamsterdam.com/",
+        "startDate": "2023-09",
+        "endDate": "Present",
+        "summary": "Co-founded and actively contribute to a group dedicated to promoting AI safety research and awareness in Amsterdam.",
+        "highlights": [
+          "Organized OpenAI Talk and Q&A on AI and Existential Risk",
+          "Coordinated Panel Discussion on AI Risks: From Today to Doomsday",
+          "Facilitated reading groups on AGI Safety Fundamentals"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Amsterdam",
+        "location": "Amsterdam, Netherlands",
+        "url": "https://www.uva.nl/en",
+        "area": "Artificial Intelligence",
+        "studyType": "PhD",
+        "startDate": "2021-10",
+        "endDate": "Present",
+        "courses": ["Continual Learning", "Mechanistic Interpretability"]
+      },
+      {
+        "institution": "University of Heidelberg",
+        "location": "Heidelberg, Germany",
+        "url": "https://www.uni-heidelberg.de/en",
+        "area": "Computational Physics",
+        "studyType": "MSc",
+        "startDate": "2016-09",
+        "endDate": "2019-02",
+        "score": "1.0",
+        "courses": ["Visual Learning and Computer Vision", "Machine Learning", "Artificial Intelligence", "Time Series Analysis"]
+      },
+      {
+        "institution": "University of Heidelberg",
+        "location": "Heidelberg, Germany",
+        "url": "https://www.uni-heidelberg.de/en",
+        "area": "Physics",
+        "studyType": "BSc",
+        "startDate": "2012-09",
+        "endDate": "2016-07",
+        "score": "1.7",
+        "courses": ["Analysis", "Linear Algebra", "Statistical Physics", "General Relativity"]
+      },
+      {
+        "institution": "National Taiwan University",
+        "location": "Taipei, Taiwan",
+        "url": "https://www.ntu.edu.tw/english/",
+        "area": "Mandarin Chinese",
+        "studyType": "Exchange Student",
+        "startDate": "2014-09",
+        "endDate": "2015-07",
+        "courses": ["Advanced-level Mandarin Chinese"]
+      },
+      {
+        "institution": "Gymnasium Ernestinum",
+        "location": "Celle, Germany",
+        "url": "https://ernestinum-celle.de/",
+        "area": "Abitur",
+        "studyType": "High School",
+        "startDate": "2006-09",
+        "endDate": "2012-07",
+        "score": "1.1",
+        "courses": ["Physics, Mathematics, Chemistry", "Latin, History"]
+      }
+    ],
+    "awards": [
+      {
+        "title": "Prized by German Mathematical, Physical, and Chemical Societies",
+        "date": "2012",
+        "awarder": "German Mathematical, Physical, and Chemical Societies",
+        "summary": "Recognized for outstanding performance in mathematics, physics, and chemistry during Abitur."
+      },
+      {
+        "title": "2nd Place, AI Safety Hackathon",
+        "date": "2023-12",
+        "awarder": "Entrepreneur First and Apart Research",
+        "url": "https://www.delftaisafety.org/events/ai-safety-hackathon-entrepreneur-first-apart-research",
+        "summary": "Achieved second place in the AI Safety Hackathon held in Delft."
+      }
+    ],
+    "certificates": [
+      {
+        "name": "ML Safety Course",
+        "date": "2023-08",
+        "issuer": "Dan Hendrycks, Center for AI Safety",
+        "url": "https://course.mlsafety.org/",
+        "icon": "fa-solid fa-shield-alt"
+      }
+    ],
+    "publications": [
+      {
+        "name": "Mechanistic Interpretability for AI Safety - A Review",
+        "publisher": "CoRR",
+        "releaseDate": "2024-04",
+        "url": "https://arxiv.org/abs/2404.14082",
+        "summary": "Comprehensive review of mechanistic interpretability in AI, focusing on its applications in AI safety and potential to prevent catastrophic outcomes."
+      },
+      {
+        "name": "Taming Simulators: Challenges, Pathways and Vision for the Alignment of Large Language Models",
+        "publisher": "AAAI Inaugural Summer Symposium Series",
+        "releaseDate": "2023-10",
+        "url": "https://ojs.aaai.org/index.php/AAAI-SS/article/view/27478",
+        "summary": "Explored challenges and strategies for aligning large language models, emphasizing the concept of simulators and simulacra in AI alignment."
+      },
+      {
+        "name": "Continual Learning of Dynamical Systems With Competitive Federated Reservoir Computing",
+        "publisher": "Conference on Lifelong Learning Agents",
+        "releaseDate": "2022-11",
+        "url": "https://arxiv.org/abs/2206.13336",
+        "summary": "Proposed a novel approach to continual learning of dynamical systems using competitive federated reservoir computing."
+      },
+      {
+        "name": "Tractable Dendritic RNNs for Reconstructing Nonlinear Dynamical Systems",
+        "publisher": "International Conference on Machine Learning (ICML)",
+        "releaseDate": "2022-06",
+        "url": "https://arxiv.org/abs/2207.02542",
+        "summary": "Developed an interpretable and tractable piecewise-linear RNN augmented with a linear spline basis expansion for inferring nonlinear dynamical systems."
+      },
+      {
+        "name": "Unsupervised Part-Based Disentangling of Object Shape and Appearance",
+        "publisher": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+        "releaseDate": "2019-06",
+        "url": "https://arxiv.org/abs/1903.06946",
+        "summary": "Presented a novel approach for unsupervised disentanglement of object shape and appearance in computer vision (oral presentation, best paper finalist)."
+      }
+    ],
+    "skills": [
+      {
+        "name": "AI Safety Research",
+        "level": "Advanced",
+        "icon": "fa-solid fa-shield-alt",
+        "keywords": [
+          "Mechanistic Interpretability",
+          "AI Alignment",
+          "Transformer Models",
+          "Monosemanticity Engineering"
+        ]
+      },
+      {
+        "name": "Programming",
+        "level": "Advanced",
+        "icon": "fa-solid fa-code",
+        "keywords": [
+          "Python",
+          "JAX",
+          "PyTorch",
+          "Functional Programming",
+          "Git",
+          "Bash",
+          "Linux",
+          "LaTeX"
+        ]
+      },
+      {
+        "name": "Machine Learning",
+        "level": "Advanced",
+        "icon": "fa-solid fa-brain",
+        "keywords": [
+          "Deep Learning",
+          "Reinforcement Learning",
+          "Computer Vision",
+          "Natural Language Processing",
+          "Dynamical Systems"
+        ]
+      }
+    ],
+    "languages": [
+      {
+        "language": "German",
+        "fluency": "Native",
+        "icon": "fa-solid fa-flag"
+      },
+      {
+        "language": "English",
+        "fluency": "Fluent",
+        "icon": "fa-solid fa-flag"
+      },
+      {
+        "language": "Dutch",
+        "fluency": "Conversational",
+        "icon": "fa-solid fa-flag"
+      },
+      {
+        "language": "Mandarin",
+        "fluency": "Conversational",
+        "icon": "fa-solid fa-flag"
+      },
+      {
+        "language": "French",
+        "fluency": "Basic",
+        "icon": "fa-solid fa-flag"
+      },
+      {
+        "language": "Italian",
+        "fluency": "Basic",
+        "icon": "fa-solid fa-flag"
+      },
+      {
+        "language": "Latin",
+        "fluency": "Advanced Latinum",
+        "icon": "fa-solid fa-flag"
+      },
+      {
+        "language": "Ancient Greek",
+        "fluency": "Graecum",
+        "icon": "fa-solid fa-flag"
+      },
+      {
+        "language": "Old Hebrew",
+        "fluency": "Hebraicum",
+        "icon": "fa-solid fa-flag"
+      }
+    ],
+    "interests": [
+      {
+        "name": "AI Safety",
+        "icon": "fa-solid fa-shield-alt",
+        "keywords": [
+          "Alignment",
+          "Robustness",
+          "Transparency",
+          "Value Learning"
+        ]
+      },
+      {
+        "name": "Mechanistic Interpretability",
+        "icon": "fa-solid fa-microscope",
+        "keywords": [
+          "Neural Networks",
+          "Feature Visualization",
+          "Circuit Analysis"
+        ]
+      },
+      {
+        "name": "Dynamical Systems",
+        "icon": "fa-solid fa-chart-line",
+        "keywords": [
+          "Nonlinear Dynamics",
+          "Chaos Theory",
+          "Time Series Analysis"
+        ]
+      }
+    ],
+    
+    "teaching": [
+      {
+        "course": "Deep Learning I & II",
+        "institution": "University of Amsterdam",
+        "position": "Teaching Assistant",
+        "startDate": "2021",
+        "endDate": "2023",
+        "description": "Responsible for topics including recurrent neural networks, dynamical systems, energy-based models, and graph neural networks. Supervised student projects on Bayesian deep learning and reward hacking in reinforcement learning."
+      },
+      {
+        "course": "Foundation Models",
+        "institution": "University of Amsterdam",
+        "position": "Lecturer",
+        "startDate": "2023",
+        "endDate": "2024",
+        "description": "Co-lectured a section on AI safety for large language models, covering RLHF, developmental interpretability, and mechanistic interpretability."
+      }
+    ],
+    "supervision": [
+      {
+        "level": "MSc",
+        "program": "Information Systems",
+        "institution": "University of Amsterdam",
+        "startDate": "2023",
+        "endDate": "2024",
+        "students": [
+          "Mattia Cintioli", "Matej Lončarić", "Raiz Fatehmahomed",
+          "Selina Palić", "Luuk Wagenaar", "Danial Iqbal",
+          "Anya Nikiforova", "Amir Azman"
+        ]
+      },
+      {
+        "level": "MSc",
+        "program": "Artificial Intelligence",
+        "institution": "University of Amsterdam",
+        "startDate": "2022",
+        "endDate": "2024",
+        "students": [
+          "Mund Vetter", "Tarmo Pungas", "Alexia Muresan",
+          "Marius Strampel", "Kieron Kretschmar", "Ben Schaeffrey"
+        ]
+      },
+      {
+        "level": "Project AI",
+        "program": "MSc Artificial Intelligence",
+        "institution": "University of Amsterdam",
+        "startDate": "2024",
+        "endDate": "2024",
+        "students": [
+          "Amir Sahrani", "Thijmen Nijdam", "Derck Prinzhoorn", "Gijs de Jong"
+        ]
+            }      
+    ]
+}
