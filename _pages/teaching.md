@@ -20,7 +20,7 @@ I have given several talks on AI Safety and Mechanistic Interpretability:
 
 ## teaching 
 
-I have been involved in teaching several courses for the Master's programs in Artificial Intelligence and Data Science at the University of Amsterdam. Below is a brief description of each.
+I have been involved in teaching several courses for the Master's programs in Artificial Intelligence at the University of Amsterdam. Below is a brief description of each.
 
 ##### deep learning I & II (teaching assistant: WS 21/22, WS 22/23, SS 22, SS 23)
 
