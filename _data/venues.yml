@@ -1,0 +1,40 @@
+"AJP":
+  url: https://aapt.scitation.org/journal/ajp
+  color: "#00369f"
+
+"PhysRev":
+  url: https://journals.aps.org/
+
+"Vision":
+  color: "#009f36"
+
+
+# abbr={CoLLAs},
+# journal = {CoRR},
+# abbr={AAAI-SS},
+# abbr={ICML},
+# abbr={CVPR},
+
+"CoLLAs":
+  url: https://lifelong-ml.cc/ 
+  # color: "#b31b1b"
+
+"AAAI-SS":
+  url: https://aaai.org/conference/summer-symposia/ 
+  # color: "#b31b1b"
+
+"ICML":
+  url: https://icml.cc/
+  # color: "#b31b1b"
+
+"CVPR":
+  url: https://cvpr2021.thecvf.com/
+  # color: "#b31b1b"
+
+"CoRR":
+  url: https://arxiv.org/
+  # color: "#b31b1b"
+
+"NeurIPS":
+  url: https://neurips.cc/ 
+  # color: "#b31b1b"
