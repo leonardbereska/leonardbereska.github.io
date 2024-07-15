@@ -122,6 +122,7 @@ d-article {
       }
     }
     .figcaption {
+      color: var(--global-text-color) !important;
       line-height: 1.4em;
     }
     toc-line {
@@ -168,4 +169,164 @@ d-appendix {
       }
     }
   }
+}
+
+/*******************************************************************************
+ * Tippy tooltip styles for glossary terms
+ ******************************************************************************/
+ .tippy-box[data-theme~='custom'] {
+  background-color: var(--global-bg-color);
+  color: var(--global-text-color);
+  border: 1px solid var(--global-divider-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tippy-box[data-theme~='custom'][data-placement^='top'] > .tippy-arrow::before {
+  border-top-color: var(--global-bg-color);
+}
+.tippy-box[data-theme~='custom'][data-placement^='bottom'] > .tippy-arrow::before {
+  border-bottom-color: var(--global-bg-color);
+}
+.tippy-box[data-theme~='custom'][data-placement^='left'] > .tippy-arrow::before {
+  border-left-color: var(--global-bg-color);
+}
+.tippy-box[data-theme~='custom'][data-placement^='right'] > .tippy-arrow::before {
+  border-right-color: var(--global-bg-color);
+}
+
+// Style for the glossary term
+.glossary-term {
+  border-bottom: 1px dotted var(--global-text-color);
+  cursor: help;
+}
+
+// Style for the definition box 
+body .definition-box {
+  // background-color: #e6f3f0; /* Light turquoise background */
+  // border: 2px solid #40a090; /* Turquoise border */ 
+  background-color: var(--definition-bg);
+  border: 2px solid var(--definition-border);
+  border-radius: 8px;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+body .definition-title {
+  color: var(--definition-title-text) !important;
+  background-color: var(--definition-title-bg); 
+  padding: 5px 10px;
+  margin: -10px -10px 10px -10px; /* Negative margin to extend to edges */
+  border-radius: 6px 6px 0 0;
+  font-weight: bold;
+}
+
+body .definition-content {
+  margin: 0;
+  padding: 0 5px;
+  color: var(--definition-text) !important; 
+  .d-cite {
+    color: var(--global-text-color) !important;
+  }
+  .glossary-term {
+    color: var(--explanation-text) !important;
+    border-bottom: 1px dotted var(--explanation-text); 
+    cursor: help; // cursor pointer
+    // 
+    &:hover { 
+      background-color: rgba(var(--explanation-text), 0.1);
+    }
+
+  }
+}
+
+
+// Style for the hypothesis box (same as definition box but inverts light and dark mode colors)
+body .hypothesis-box {
+  background-color: var(--hypothesis-bg);
+  border: 2px solid var(--hypothesis-border);
+  border-radius: 8px;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+body .hypothesis-title {
+  color: var(--hypothesis-title-text) !important;
+  background-color: var(--hypothesis-title-bg); 
+  padding: 5px 10px;
+  margin: -10px -10px 10px -10px; /* Negative margin to extend to edges */
+  border-radius: 6px 6px 0 0;
+  font-weight: bold;
+}
+
+body .hypothesis-content {
+  margin: 0;
+  padding: 0 5px;
+  color: var(--hypothesis-text) !important; 
+  .d-cite {
+    color: var(--global-text-color) !important;
+  }
+  em {
+    color: var(--hypothesis-text) !important;
+  }
+  .glossary-term {
+      color: var(--explanation-text) !important;
+      border-bottom: 1px dotted var(--explanation-text); 
+      cursor: help; // cursor pointer
+      // 
+      &:hover { 
+        background-color: rgba(var(--explanation-text), 0.1);
+      }
+
+  }
+}
+
+body .explanation-box {
+  background-color: var(--explanation-bg);
+  border: 2px solid var(--explanation-border);
+  border-radius: 8px;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+body .explanation-title {
+  color: var(--explanation-title-text) !important;
+  background-color: var(--explanation-title-bg); 
+  padding: 5px 10px;
+  margin: -10px -10px 10px -10px; /* Negative margin to extend to edges */
+  border-radius: 6px 6px 0 0;
+  font-weight: bold;
+}
+
+body .explanation-content {
+  margin: 0;
+  padding: 0 5px;
+  color: var(--explanation-text) !important; 
+  // color for <strong> tags
+  strong {
+    color: var(--explanation-text) !important;
+  }
+  // color for <em> tags
+  em {
+    color: var(--explanation-text) !important;
+  }
+  // color for  {% term %} tags
+  .glossary-term {
+    color: var(--explanation-text) !important;
+    border-bottom: 1px dotted var(--explanation-text); 
+    cursor: help; // cursor pointer
+    // 
+    &:hover { 
+      background-color: rgba(var(--explanation-text), 0.1);
+    }
+
+  }
+  
+
+}
+
+.center-figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }

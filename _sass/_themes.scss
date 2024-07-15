@@ -35,6 +35,29 @@
   --global-danger-block-text: #600;
   --global-danger-block-title: #c00;
 
+  /* Light mode colors */
+
+  --definition-bg: #{$light-turquoise-color}; /* Light turquoise background */ 
+  --definition-border: #{$turquoise-color};
+  --definition-title-bg: #{$turquoise-color};
+  --definition-title-text: #{$white-color}; 
+  --definition-text: #{$black-color}; 
+  
+  //hypothesis box is the same as definition box but inverts light and dark mode colors
+  --hypothesis-bg: #{$light-orange-color}; /* Light orange background */
+  --hypothesis-border: #{$orange-color};
+  --hypothesis-title-bg: #{$orange-color};
+  --hypothesis-title-text: #{$white-color};
+  --hypothesis-text: #{$black-color};
+ 
+  // explanation box is the same as definition box but in pink 
+  --explanation-bg: #{$light-pink-color}; /* Light pink background */
+  --explanation-border: #{$pink-color};
+  --explanation-title-bg: #{$pink-color};
+  --explanation-title-text: #{$white-color};
+  --explanation-text: #{$black-color};  
+
+
   #light-toggle-system {
     padding-left: 10px;
     padding-top: 12px;
@@ -67,6 +90,7 @@
   }
 }
 
+
 html[data-theme="dark"] {
   --global-bg-color: #{$grey-color-dark};
   --global-code-bg-color: #{$code-bg-color-dark};
@@ -98,6 +122,47 @@ html[data-theme="dark"] {
   --global-danger-block-bg: #ffe0e0;
   --global-danger-block-text: #600;
   --global-danger-block-title: #c00;
+
+  /* Definition Dark mode colors */
+  --definition-bg: #{$light-orange-color}; /* Light orange background */ 
+  --definition-border: #{$orange-color};
+  --definition-title-bg: #{$orange-color};
+  --definition-title-text: #{$white-color};
+  --definition-text: #{$black-color};
+
+  // hypothesis box is the same as definition box but inverts light and dark mode colors
+  --hypothesis-bg: #{$light-turquoise-color}; /* Light turquoise background */ 
+  --hypothesis-border: #{$turquoise-color};
+  --hypothesis-title-bg: #{$turquoise-color};
+  --hypothesis-title-text: #{$white-color}; 
+  --hypothesis-text: #{$black-color}; 
+
+
+  // /* Aggressive MathJax styling */
+  // mjx-container[jax="CHTML"][display="true"],
+  // mjx-container[jax="CHTML"][display="true"] mjx-math,
+  // mjx-container[jax="CHTML"][display="true"] mjx-math *,
+  // mjx-container[jax="CHTML"]:not([display="true"]),
+  // mjx-container[jax="CHTML"]:not([display="true"]) mjx-math,
+  // mjx-container[jax="CHTML"]:not([display="true"]) mjx-math * {
+  //   color: var(--global-text-color) !important;
+  //   border-color: var(--global-text-color) !important;
+  // }
+
+  // /* For SVG output */
+  // mjx-container[jax="SVG"] path,
+  // mjx-container[jax="SVG"] use {
+  //   stroke: var(--global-text-color) !important;
+  //   fill: var(--global-text-color) !important;
+  // }
+
+  
+  // .MathJax, .MathJax_Display, .MathJax *, .MathJax_SVG *, .MathJax_SVG_Display *,
+  // .katex, .katex *, .katex-display *, .katex-html * {
+  //   color: var(--global-text-color) !important;
+  //   border-color: var(--global-text-color) !important;
+  //   stroke: var(--global-text-color) !important;
+  // }
 
   .repo-img-light {
     display: none;

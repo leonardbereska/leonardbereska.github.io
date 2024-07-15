@@ -1,0 +1,16 @@
+.glossary-term {
+    border-bottom: 1px dotted $text-color;
+    cursor: help;
+    
+    &:hover {
+      background-color: rgba($text-color, 0.1);
+    }
+  }
+  
+  // Styles for Tippy.js tooltips
+  .tippy-box[data-theme~='custom'] {
+    background-color: $bg-color;
+    color: $text-color;
+    border: 1px solid $border-color;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }

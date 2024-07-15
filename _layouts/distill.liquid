@@ -24,6 +24,30 @@
         {{ page._styles }}
       </style>
     {% endif %}
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="{{ '/assets/js/distillpub/glossary-tooltips.js' | relative_url }}"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light.css"/>
+
+      <!-- Dublin Core metadata -->
+    <meta name="dc.title" content="Mechanistic Interpretability for AI Safety — A Review">
+    <meta name="dc.creator" content="Bereska, Leonard">
+    <meta name="dc.creator" content="Gavves, Efstratios">
+    <meta name="dc.date" content="2024-04">
+    <meta name="dc.type" content="article">
+    <meta name="dc.identifier" content="http://arxiv.org/abs/2404.14082">
+    <meta name="dc.description" content="Understanding AI systems' inner workings is critical for ensuring value alignment and safety. This review explores mechanistic interpretability: reverse-engineering the computational mechanisms and representations learned by neural networks into human-understandable algorithms and concepts to provide a granular, causal understanding. We establish foundational concepts such as features encoding knowledge within neural activations and hypotheses about their representation and computation. We survey methodologies for causally dissecting model behaviors and assess the relevance of mechanistic interpretability to AI safety. We investigate challenges surrounding scalability, automation, and comprehensive interpretation. We advocate for clarifying concepts, setting standards, and scaling techniques to handle complex models and behaviors and expand to domains such as vision and reinforcement learning. Mechanistic interpretability could help prevent catastrophic outcomes as AI systems become more powerful and inscrutable.">
+
+    <!-- Highwire Press tags -->
+    <meta name="citation_title" content="Mechanistic Interpretability for AI Safety — A Review">
+    <meta name="citation_author" content="Bereska, Leonard">
+    <meta name="citation_author" content="Gavves, Efstratios">
+    <meta name="citation_publication_date" content="2024/04">
+    <meta name="citation_journal_title" content="CoRR">
+    <meta name="citation_arxiv_id" content="2404.14082">
+    <meta name="citation_abstract_html_url" content="http://arxiv.org/abs/2404.14082">
+    <meta name="citation_fulltext_html_url" content="http://arxiv.org/abs/2404.14082">
+    <meta name="citation_pdf_url" content="http://arxiv.org/pdf/2404.14082.pdf">
   </head>
 
   <d-front-matter>
@@ -92,6 +116,15 @@
                     {% for subsection in section.subsections %}
                       <li>
                         <a href="#{{ subsection.name | slugify }}">{{ subsection.name }}</a>
+                        {% if subsection.subsubsections %}
+                          <ul>
+                            {% for subsubsection in subsection.subsubsections %}
+                              <li>
+                                <a href="#{{ subsubsection.name | slugify }}">{{ subsubsection.name }}</a>
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
                       </li>
                     {% endfor %}
                   </ul>
@@ -104,6 +137,33 @@
       </d-article>
 
       <d-appendix>
+        <h3>Citation Information</h3>
+        <p>Please cite as:</p>
+        <pre class=citation> Bereska, L. & Gavves, E. Mechanistic Interpretability for AI Safety — A Review. CoRR (2024). http://arxiv.org/abs/2404.14082.</pre>
+        <p> BibTeX Citation:</p>
+        <div class="language-bibtex">
+    <div class="highlight">
+      <div class="code-display-wrapper">
+        <pre class="highlight"><code><span class="nc">@article</span><span class="p">{</span><span class="nl">bereska2024mechanistic</span><span class="p">,</span>
+  <span class="na">title</span>   <span class="p">=</span> <span class="s">{Mechanistic Interpretability for AI Safety - A Review}</span><span class="p">,</span>
+  <span class="na">author</span>  <span class="p">=</span> <span class="s">{Bereska, Leonard and Gavves, Efstratios}</span><span class="p">,</span>
+  <span class="na">year</span>    <span class="p">=</span> <span class="s">{2024}</span><span class="p">,</span>
+  <span class="na">month</span>   <span class="p">=</span> <span class="s">{Apr}</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">{CoRR}</span><span class="p">,</span>
+  <span class="na">volume</span>  <span class="p">=</span> <span class="s">{abs/2404.14082}</span><span class="p">,</span>
+  <span class="na">url</span>     <span class="p">=</span> <span class="s">{http://arxiv.org/abs/2404.14082}</span>
+<span class="p">}</span>
+</code></pre>
+        <button class="copy" type="button" aria-label="Copy code to clipboard">
+          <i class="fa-solid fa-clipboard"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+        <h3>Acknowledgements</h3>
+        <p>I am grateful for the invaluable feedback and comments from Leon Lang, Tim Bakker, Jannik Brinkmann, Can Rager, Louis van Harten, Jacqueline Bereska, Thijmen Nijdam, Alice Rigg, Arthur Conmy, and Tom Lieberum. Their insights substantially improved this work.</p>
+        <h3>Glossary</h3>
+        <dl id="full-glossary"></dl>
         <d-footnote-list></d-footnote-list>
         <d-citation-list></d-citation-list>
       </d-appendix>
