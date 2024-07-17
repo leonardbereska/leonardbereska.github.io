@@ -240,7 +240,7 @@ Toy models can demonstrate under which conditions superposition occurs <d-cite k
 
 <figure id="fig:polysemanticity">
   <div class="center-figure">
-    <img src="{{site.baseurl}}/assets/img/posts/2024-07-11-mechinterpreview/polysemanticity.png" alt="Polysemanticity in neural networks" style="width: 60%;">
+    <img src="{{site.baseurl}}/assets/img/posts/2024-07-11-mechinterpreview/polysemanticity.png" alt="Polysemanticity in neural networks" style="width: 100%;">
   </div>
  <figcaption style="color: var(--global-text-color);">
    <strong>Figure 5:</strong> Observed neural networks <strong>(left)</strong> can be viewed as compressed simulations of larger, sparser networks <strong>(right)</strong> where neurons represent distinct features. An "almost orthogonal" projection compresses the high-dimensional sparse representation, manifesting as polysemantic neurons involved with multiple features in the lower-dimensional observed model, reflecting the compressed encoding. Figure adapted from <d-cite key="bricken_monosemanticity_2023"></d-cite>. <a href="{{site.baseurl}}/assets/img/posts/2024-07-11-mechinterpreview/polysemanticity.pdf" target="_blank">(View PDF)</a>

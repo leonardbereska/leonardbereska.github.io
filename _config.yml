@@ -6,9 +6,10 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Leonard 
 middle_name: F. 
 last_name: Bereska 
-email: leonard.bereska@uva.nl 
+email: leonard [dot] bereska [at] uva [dot] nl
+# "&#108;&#101;&#111;&#110;&#97;&#114;&#100; [dot] &#98;&#101;&#114;&#101;&#115;&#107;&#97; [at] &#117;&#118;&#97; [dot] &#110;&#108;"
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Leonard's Academic Website. 
+  Leonard Bereska's Academic Website. 
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -78,7 +79,7 @@ acm_id: # your dl.acm.org/profile/id
 blogger_url: # your blogger URL
 bluesky_url: # your bluesky URL
 dblp_url: # your DBLP profile url
-discord_id: # your discord id (18-digit unique numerical identifier)
+discord_id: 804330873490374697 # your discord id (18-digit unique numerical identifier)
 facebook_id: # your facebook id
 flickr_id: # your flickr id
 github_username: leonardbereska # your GitHub user name
@@ -115,7 +116,7 @@ youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 zotero_username: leonard.bereska # your zotero username
 
 # You can even add a little note about which of these is the best way to reach you.
-contact_note: >
+contact_note: Let's connect! I'm always eager to collaborate with fellow researchers, discuss ideas, or just chat about AI safety (or anything really). Feel free to reach out via email or connect with me on LinkedIn or Discord. Together, we can work towards a future where AI systems are not only powerful but also aligned with human values and interests. Let's make AI safer, one interpreted circuit at a time!
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
