@@ -23,7 +23,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7.2' # As suggested in the tutorial
+          ruby-version: '3.1.2' # As suggested in the tutorial
           bundler-cache: true
       - name: Setup Pages
         id: pages
