@@ -49,10 +49,11 @@ Our lecture slides are available under this [link to google slides](https://docs
 
 I have participated in several summer schools and workshops to enhance my knowledge in AI and AI Safety:
 
-- [Milan Machine Learning School](https://www.m2lschool.org/past-editions/m2l-2022-italy), Milan, Italy, September 2022.
-- [ProbAI 2022 — Nordic Probabilistic AI School](https://probabilistic.ai/), Helsinki, Finland, June 2022.
-- [Dan Hendrycks' course on AI Safety](https://course.mlsafety.org/about), online, August 2023.
+- [Mediteranean Machine Learning Summer School](https://www.m2lschool.org/past-editions/m2l-2022-italy), Milan, Italy, September 2022.
+- [Nordic Probabilistic AI Summer School](https://probabilistic.ai/), Helsinki, Finland, June 2022.
+- [Dan Hendrycks' Course on AI Safety](https://course.mlsafety.org/about), online, August 2023.
 - [AI Safety Hackathon](https://www.delftaisafety.org/events/ai-safety-hackathon-entrepreneur-first-apart-research), finished 2nd place ([slides]({{ site.baseurl }}/assets/pdf/2023_hackathon_apart.pdf)), Delft, December 2023.
+- [Human-Aligned AI Summer School](https://humanaligned.ai/), Prague, Czech Republic, July 2024.
 
 ---
 
