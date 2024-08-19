@@ -1,7 +1,7 @@
 ---
-layout: distill
+layout: mechinterpreview 
 title: Mechanistic Interpretability for AI Safety — A Review
-description:  
+description: A comprehensive review of mechanistic interpretability, an approach to reverse engineering neural networks into human-understandable algorithms and concepts, focusing on its relevance to AI safety. 
 tags: mechanistic interpretability AI safety review
 giscus_comments: true
 date: 2024-07-10 
@@ -754,3 +754,7 @@ Complementing the predominant bottom-up methods <d-cite key="hanna_how_2023"></d
 While some mechanistic interpretability has explored convolutional neural networks for vision <d-cite key="cammarata_curve_2021,cammarata_curve_2020"></d-cite>, vision-language models <d-cite key="palit_visionlanguage_2023,salin_are_2022,hilton_understanding_2020"></d-cite>, and multimodal neurons <d-cite key="goh_multimodal_2021"></d-cite>, little work has focused on vision transformers <d-cite key="palit_visionlanguage_2023,aflalo_vl-interpret_2022,vilas_analyzing_2023"></d-cite>. Future efforts could identify mechanisms within vision-language models, mirroring progress in unimodal language models <d-cite key="nanda_progress_2023,wang_interpretability_2023"></d-cite>. 
 
 Reinforcement learning (RL) is also a crucial frontier given its role in advanced AI training via techniques like reinforcement learning from human feedback (RLHF) <d-cite key="christiano_deep_2017,bai_training_2022"></d-cite>, despite potentially posing significant safety risks <d-cite key="bereska_taming_2023,casper_open_2023"></d-cite>. Interpretability of RL should investigate reward/goal representations <d-cite key="turntrout_understanding_2023,colognese_high-level_2023,colognese_internal_2023,bloom_decision_2023"></d-cite>, study circuitry changes from alignment algorithms <d-cite key="prakash_finetuning_2024,jain_mechanistically_2023,lee_mechanistic_2024"></d-cite>, and explore emergent subgoals or proxies <d-cite key="hubinger_risks_2019,ivanitskiy_structured_2023"></d-cite> such as internal reward models <d-cite key="marks_training_2023"></d-cite>.
+
+
+
+
