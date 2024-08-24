@@ -38,3 +38,8 @@
 "NeurIPS":
   url: https://neurips.cc/ 
   # color: "#b31b1b"
+
+"TMLR":
+  url: https://jmlr.org/tmlr/ 
+  # color: "#b31b1b"
+

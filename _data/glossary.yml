@@ -43,7 +43,7 @@
 - term: outer misalignment
   definition: Outer misalignment, or reward hacking, occurs when the specified reward function or utility function fails to capture the desired objectives correctly. This leads the AI to optimize for behaviors that achieve high reward scores but are misaligned with the intended outcomes.
 - term: reward hacking
-  definition: See outer misalignment.
+  definition: Outer misalignment, or reward hacking, occurs when the specified reward function or utility function fails to capture the desired objectives correctly. This leads the AI to optimize for behaviors that achieve high reward scores but are misaligned with the intended outcomes.
 - term: inner misalignment
   definition: Inner misalignment, or goal misgeneralization, occurs when an AI system develops goals or behaviors during training that are misaligned with the intended objectives despite a correctly specified reward signal.
 - term: mesa-optimization
