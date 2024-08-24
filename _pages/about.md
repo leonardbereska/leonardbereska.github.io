@@ -24,10 +24,14 @@ I'm Leonard, a PhD Candidate at the University of Amsterdam, dedicated to enhanc
 
 My work revolves around reverse engineering neural networks into human-interpretable algorithms. I'm particularly interested in:
 
-- Developing techniques to reduce polysemanticity in transformer models.
-- Exploring the emergence of world models in large language models.
-- Investigating the connections between superposition and disentanglement.
-- Applying mechanistic interpretability insights to real-world AI safety challenges or medical applications.
+- [engineering monosemanticity](https://arxiv.org/abs/2211.09169) and implementing [sparse distillation](https://www.lesswrong.com/posts/MXabwqMwo3rkGqEW8/sparse-mlp-distillation) techniques in transformer models.
+- investigating the relationship between [mechanistic interpretability and adversarial robustness](https://leonardbereska.github.io/blog/2024/mechrobustproposal/).
+- analyzing [truth representations](http://arxiv.org/abs/2312.01037) and [simulacra](https://generative.ink/posts/simulators/) in large language models.
+- applying [singular learning theory](https://edmundlth.github.io/posts/overview-of-singular-learning-theory/) to examine phase transitions in algorithmic tasks.
+- mechanistically interpreting [prior-fitted tabular transformers](https://arxiv.org/abs/2207.01848).
+- creating sparse boolean circuits (inspired by [computation in superposition](https://arxiv.org/abs/2408.05451)) as testbeds and benchmarks for interpretability methods.
+ 
+If you find any of these topics interesting, please reach out.
 
 As part of the [AI Safety Initiative Amsterdam](https://aisafetyamsterdam.com/), I'm actively involved in promoting AI safety research and awareness. We organize events, facilitate reading groups, and foster discussions on crucial AI safety topics.
 

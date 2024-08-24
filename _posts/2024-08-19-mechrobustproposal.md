@@ -1,6 +1,6 @@
 ---
 layout: mechrobustproposal 
-title: Mechanistic Interpretability for Adversarial Robustness - A Proposal
+title: Mechanistic Interpretability for Adversarial Robustness — A Proposal
 description: A research proposal exploring the synergies between mechanistic interpretability and adversarial robustness to develop safer AI systems.
 tags: proposal, interpretability, robustness, adversarial, AI safety
 date: 2024-08-19 

@@ -1,20 +1,27 @@
 ---
 layout: page
-permalink: /teaching/
+permalink: /academic/
 title: academic
 description: Courses, student supervision, and miscellaneous academic activities.
 nav: true
 nav_order: 6
 ---
 
-## talks and presentations
+## talks, presentations and figures
 
 I have given several talks on AI Safety and Mechanistic Interpretability:
 
-- _The AI Alignment Problem_ ([slides]({{ site.baseurl }}/assets/pdf/2023_alignment_problem_soos.pdf)) (March, 2023, University of Amsterdam),
-- _Taming Simulators_ ([slides]({{ site.baseurl }}/assets/pdf/2023_taming_simulators_aaai.pdf)) (June, 2023, AAAI Symposium, Singapore),
-- _AI Safety for LLMs_ ([slides]({{ site.baseurl }}/assets/pdf/2023_aisafety_ellis.pdf)) (Nov. 2023, Keynote ELLIS BeNeLux, Delft),
-- _Mechanistic Interpretability_ ([google slides](https://docs.google.com/presentation/d/1G0CFf_jJJlnDDLNfIvv8G4HdC4V6Sn9b8La13_sJ5wE/edit?usp=sharing)) (May 2024, University of Amsterdam).
+- The AI Alignment Problem ([slides]({{ site.baseurl }}/assets/pdf/2023_alignment_problem_soos.pdf)) ([keynote](https://drive.google.com/file/d/1GnxoDtuJKaIyLu3gyp36kgc_rsc4p7KE/view?usp=sharing)) (March, 2023, University of Amsterdam)
+- Taming Simulators ([slides]({{ site.baseurl }}/assets/pdf/2023_taming_simulators_aaai.pdf)) ([keynote](https://drive.google.com/file/d/1znJ_tRyToofbyOXAr49TXagzdOOESAqf/view?usp=sharing)) (June, 2023, AAAI Symposium, Singapore)
+- AI Safety for LLMs ([slides]({{ site.baseurl }}/assets/pdf/2023_aisafety_ellis.pdf)) ([keynote](https://drive.google.com/file/d/1A1N0NqI5FJiTtat2nGbkz9DhEEe6bAXW/view?usp=sharing)) (Nov. 2023, Keynote ELLIS BeNeLux, Delft)
+- Mechanistic Interpretability [google slides](https://docs.google.com/presentation/d/1G0CFf_jJJlnDDLNfIvv8G4HdC4V6Sn9b8La13_sJ5wE/edit?usp=sharing) (May 2024, University of Amsterdam)
+
+I have also created figures for research papers in keynote:
+
+- [Mechanistic Interpretability for AI Safety — A Review](https://arxiv.org/abs/2404.14082) ([keynote](https://drive.google.com/file/d/1V1HqBGXX31Ls7egwVJpSrrUpFpd4lZgH/view?usp=sharing))
+
+All slides and keynote files are licensed under the [Creative Commons Attribution-ShareAlike (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) license.
+
 
 ---
 
@@ -95,5 +102,7 @@ I have supervised and co-supervised several Master's students in their thesis pr
 | Danial Iqbal                 | Advancing IPMN Classification: A Comprehensive Study on Deep Learning Segmentation of Intraductal Papillary Mucinous Neoplasm on MRI                                              | MSc Information Systems                  | Co-supervisor with [Jacqueline Bereska](https://jackiebereska.github.io/) | March - June 2023         |
 
 
-_If you are a student interested in AI Safety, Mechanistic Interpretability, or related fields, feel free to reach out to discuss potential supervision or collaboration opportunities._
+&nbsp;  
+
+_If you are a student interested in AI Safety, Mechanistic Interpretability, or related fields, feel free to reach out to discuss potential supervision or collaboration._
 
