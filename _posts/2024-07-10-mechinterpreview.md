@@ -108,17 +108,17 @@ We encounter a spectrum of interpretability paradigms for decoding AI systems' d
 
 <figure id="fig:paradigms">
 <img src="{{site.baseurl}}/assets/img/posts/2024-07-11-mechinterpreview/paradigms.png" alt="Figure comparing behavioral, attributional, concept-based, and mechanistic interpretability paradigms" style="width: 100%;"/>
-<figcaption style="color: var(--global-text-color);"><strong>Figure 1:</strong> Interpretability paradigms offer distinct lenses for understanding neural networks: <strong>Behavioral</strong> analyzes input-output relations; <strong>Attributional</strong> quantifies individual input feature influences; <strong>Concept-based</strong> identifies high-level representations governing behavior; <strong>Mechanistic</strong> uncovers precise causal mechanisms from inputs to outputs.</figcaption>
+<figcaption style="color: var(--global-text-color); margin-top: 0.5em;"><strong>Figure 1:</strong> Interpretability paradigms offer distinct lenses for understanding neural networks: <strong>Behavioral</strong> analyzes input-output relations; <strong>Attributional</strong> quantifies individual input feature influences; <strong>Concept-based</strong> identifies high-level representations governing behavior; <strong>Mechanistic</strong> uncovers precise causal mechanisms from inputs to outputs.</figcaption>
 </figure>
 
 **Behavioral** interpretability treats the model as a black box, analyzing input-output relations. Techniques such as minimal pair analysis <d-cite key="warstadt_blimp_2020"></d-cite>, sensitivity and perturbation analysis <d-cite key="casalicchio_visualizing_2018"></d-cite> examine input-output relations to assess the model's robustness and variable dependencies <d-cite key="shapley_value_1988,ribeiro_why_2016,covert_explaining_2021"></d-cite>. Its *model-agnostic* nature is practical for complex or proprietary models but lacks insight into internal decision processes and causal depth <d-cite key="jumelet_evaluating_2023"></d-cite>.
 
 **Attributional** interpretability aims to explain outputs by tracing predictions to individual input contributions using gradients. Raw gradients can be discontinuous or sensitive to slight perturbations. Therefore, techniques such as SmoothGrad <d-cite key="smilkov_smoothgrad_2017"></d-cite> and Integrated Gradients <d-cite key="sundararajan_axiomatic_2017"></d-cite> average across gradients. Other popular techniques are layer-wise relevance propagation <d-cite key="bach_pixelwise_2015"></d-cite>, DeepLIFT <d-cite key="shrikumar_learning_2017"></d-cite>, or GradCAM <d-cite key="selvaraju_gradcam_2016"></d-cite>. Attribution enhances transparency by showing input feature influence without requiring an understanding of the internal structure, enabling decision validation, compliance, and trust while serving as a bias detection tool, but also has fundamental limitations <d-cite key="bilodeau_impossibility_2024"></d-cite>.
 
-**Concept-based** interpretability adopts a top-down approach to unraveling a model's decision-making processes by probing its learned representations for high-level concepts and patterns governing behavior. Techniques include training supervised auxiliary classifiers <d-cite key="belinkov_probing_2021"></d-cite>, employing unsupervised contrastive and structured probes (see Section 4.1) to explore latent knowledge <d-cite key="burns_discovering_2023"></d-cite>, and using neural representation analysis to quantify the representational similarities between the internal representations learned by different neural networks <d-cite key="kornblith_similarity_2019,bansal_revisiting_2021"></d-cite>. 
+**Concept-based** interpretability adopts a top-down approach to unraveling a model's decision-making processes by probing its learned representations for high-level concepts and patterns governing behavior. Techniques include training supervised auxiliary classifiers <d-cite key="belinkov_probing_2021"></d-cite>, employing unsupervised contrastive and structured probes (see [Section 4.1](#feature-disentanglement-via-sparse-dictionary-learning)) to explore latent knowledge <d-cite key="burns_discovering_2023"></d-cite>, and using neural representation analysis to quantify the representational similarities between the internal representations learned by different neural networks <d-cite key="kornblith_similarity_2019,bansal_revisiting_2021"></d-cite>. 
 Beyond observational analysis, concept-based interpretability can enable manipulation of these representations -- also called {% term representation engineering %} <d-cite key="zou_representation_2023"></d-cite> -- potentially enhancing safety by upregulating concepts such as honesty, harmlessness, and morality.
 
-**Mechanistic** interpretability is a bottom-up approach that studies the fundamental components of models through granular analysis of features, neurons, layers, and connections, offering an intimate view of operational mechanics. Unlike concept-based interpretability, it aims to uncover causal relationships and precise computations transforming inputs into outputs, often identifying specific neural circuits driving behavior. This {% term reverse engineering %} approach draws from interdisciplinary fields like physics, neuroscience, and systems biology to guide the development of transparent, value-aligned AI systems. Mechanistic interpretability is the primary focus of this review.
+**Mechanistic** interpretability is a bottom-up approach that studies the fundamental components of models through granular analysis of features, neurons, layers, and connections, offering an intimate view of operational mechanics. Unlike concept-based interpretability, it aims to uncover causal relationships and precise computations transforming inputs into outputs, often identifying specific neural circuits driving behavior. This {% term reverse engineering %} approach draws from interdisciplinary fields like physics, neuroscience, and systems biology to guide the development of transparent, value-aligned AI systems. Mechanistic interpretability is the primary focus of this review. 
 
 ## Core Concepts and Assumptions 
 
@@ -126,8 +126,9 @@ This section introduces the key concepts and hypotheses of mechanistic interpret
 
 <figure id="fig:overview">
 <img src="{{site.baseurl}}/assets/img/posts/2024-07-11-mechinterpreview/overview.png" alt="Figure showing key concepts and hypotheses in mechanistic interpretability" style="width: 100%;"/>
-<figcaption style="color: var(--global-text-color);">
-<strong>Figure 2:</strong> Overview of key concepts and hypotheses in mechanistic interpretability, organized into four subsection (pink boxes): defining <span class="glossary-term" data-term="features">features</span> (<a href="#defining-features-as-representational-primitives">Section 3.1</a>), representation (<a href="#nature-of-features-from-monosemantic-neurons-to-non-linear-representations">Section 3.2</a>), computation (Section 3.3), and emergence (Section 3.4). In turquoise, it highlights definitions like {% term features %}, {% term circuits %}, and {% term motifs %}, and in orange, it highlights hypotheses like {% term linear representation %}, {% term superposition %}, {% term universality %}, {% term simulation %}, and {% term prediction orthogonality %}. Arrows show relationships, e.g., superposition enabling an alternative feature definition or universality connecting circuits and motifs.
+<figcaption style="color: var(--global-text-color); margin-top: 0.5em;">
+<strong>Figure 2:</strong> Overview of key concepts and hypotheses in mechanistic interpretability, organized into four subsection (pink boxes): defining <span class="glossary-term" data-term="features">features</span> (<a href="#defining-features-as-representational-primitives">Section 3.1</a>), representation (<a href="#nature-of-features-from-monosemantic-neurons-to-non-linear-representations">Section 3.2</a>), computation (<a href="circuits-as-computational-primitives-and-motifs-as-universal-circuit-patterns
+">Section 3.3</a>), and emergence (<a href="#emergence-of-world-models-and-simulated-agents">Section 3.4</a>). In turquoise, it highlights definitions like {% term features %}, {% term circuits %}, and {% term motifs %}, and in orange, it highlights hypotheses like {% term linear representation %}, {% term superposition %}, {% term universality %}, {% term simulation %}, and {% term prediction orthogonality %}. Arrows show relationships, e.g., superposition enabling an alternative feature definition or universality connecting circuits and motifs.
 </figcaption>
 </figure>
 
@@ -170,7 +171,7 @@ Mechanistic interpretability aims to uncover the *actual* representations learne
 
 #### Neurons as Computational Units?
 
-In the architecture of neural networks, neurons are the natural computational units, potentially representing individual features. Within a neural network representation $$h\in \mathbb{R}^n$$, the $$n$$ basis directions are called neurons. For a neuron to be meaningful, the basis directions must functionally differ from other directions in the representation, forming a {% term privileged basis %} -- where the basis vectors are architecturally distinguished within the neural network layer from arbitrary directions in activation space, as shown in [Figure 3](#fig:privileged). Typical non-linear activation functions privilege the basis directions formed by the neurons, making it meaningful to analyze individual neurons <d-cite key="elhage_toy_2022"></d-cite>. Analyzing neurons can give insights into a network's functionality <d-cite key="sajjad_neuronlevel_2022,mu_compositional_2020,dai_knowledge_2022,ghorbani_neuron_2020,voita_neurons_2023,durrani_analyzing_2020,goh_multimodal_2021,bills_language_2023,huang_rigorously_2023"></d-cite>.
+In the architecture of neural networks, neurons are the natural computational units, potentially representing individual features. Within a neural network representation $h\in \mathbb{R}^n$, the $n$ basis directions are called neurons. For a neuron to be meaningful, the basis directions must functionally differ from other directions in the representation, forming a {% term privileged basis %} -- where the basis vectors are architecturally distinguished within the neural network layer from arbitrary directions in activation space, as shown in [Figure 3](#fig:privileged). Typical non-linear activation functions privilege the basis directions formed by the neurons, making it meaningful to analyze individual neurons <d-cite key="elhage_toy_2022"></d-cite>. Analyzing neurons can give insights into a network's functionality <d-cite key="sajjad_neuronlevel_2022,mu_compositional_2020,dai_knowledge_2022,ghorbani_neuron_2020,voita_neurons_2023,durrani_analyzing_2020,goh_multimodal_2021,bills_language_2023,huang_rigorously_2023"></d-cite>.
 
 #### Monosemantic and Polysemantic Neurons
 
@@ -182,7 +183,7 @@ To understand the widespread occurrence of polysemanticity in neural networks, s
 
 - One trivial scenario would be that feature directions are orthogonal but not aligned with the basis directions (neurons). There is no inherent reason to assume that features would align with neurons in a non-privileged basis, where the basis vectors are not architecturally distinguished. However, even in a privileged basis formed by the neurons, the network could represent features not in the standard basis but as linear combinations of neurons (see [Figure 3](#fig:privileged), middle right).
 - An alternative hypothesis posits that *redundancy due to noise* introduced during training, such as random dropout <d-cite key="srivastava_dropout_2014"></d-cite>, can lead to redundant representations and, consequently, to polysemantic neurons <d-cite key="marshall_understanding_2024"></d-cite>. This process involves distributing a single feature across several neurons rather than isolating it into individual ones, thereby encouraging polysemanticity.
-- Finally, the {% term superposition %} hypothesis addresses the limitations in the network's representative capacity -- the number of neurons versus the number of crucial concepts. This hypothesis argues that the limited number of neurons compared to the vast array of important concepts necessitates a form of compression. As a result, an $$n$$-dimensional representation may encode features not with the $$n$$ basis directions (neurons) but with the $$\propto \exp (n)$$ possible almost orthogonal directions <d-cite key="elhage_toy_2022"></d-cite>, leading to polysemanticity.
+- Finally, the {% term superposition %} hypothesis addresses the limitations in the network's representative capacity -- the number of neurons versus the number of crucial concepts. This hypothesis argues that the limited number of neurons compared to the vast array of important concepts necessitates a form of compression. As a result, an $n$-dimensional representation may encode features not with the $n$ basis directions (neurons) but with the $\propto \exp (n)$ possible almost orthogonal directions <d-cite key="elhage_toy_2022"></d-cite>, leading to polysemanticity.
 
 <div class="hypothesis-box">
   <h4 class="hypothesis-title">Hypothesis 1: Superposition</h4>
@@ -191,7 +192,7 @@ To understand the widespread occurrence of polysemanticity in neural networks, s
 
 #### Superposition Hypothesis
 
-The {% term superposition %} hypothesis suggests that neural networks can leverage high-dimensional spaces to represent more features than the actual count of neurons by encoding features in almost orthogonal directions. Non-orthogonality means that features interfere with one another. However, the benefit of representing many more features than neurons may outweigh the interference cost, mainly when concepts are sparse and non-linear activation functions can error-correct noise <d-cite key="elhage_toy_2022"></d-cite>.
+The {% term superposition %} hypothesis suggests that neural networks can leverage high-dimensional spaces to represent more features than their actual neuron count by encoding features in almost orthogonal directions. Non-orthogonality means that features interfere with one another. However, the benefit of representing many more features than neurons may outweigh the interference cost, mainly when concepts are sparse and non-linear activation functions can error-correct noise <d-cite key="elhage_toy_2022"></d-cite>.
 
 <div class="explanation-box">
  <h4 class="explanation-title">Toy Model of Superposition</h4>
@@ -199,17 +200,20 @@ The {% term superposition %} hypothesis suggests that neural networks can levera
    A toy model <d-cite key="elhage_toy_2022"></d-cite> investigates the hypothesis that neural networks can represent more {% term features %} than the number of neurons by encoding real-world {% term concepts %} in a compressed manner. The model considers a high-dimensional vector $\mathbf{x}$, where each element $x_i$ corresponds to a feature capturing a real-world concept, represented as a random vector with varying importance determined by a weight $a_i$. These features are assumed to have the following properties: 1) <strong>Concept sparsity</strong>: Real-world concepts occur sparsely. 2) <strong>More concepts than neurons</strong>: The number of potential concepts vastly exceeds the available neurons. 3) <strong>Varying concept importance</strong>: Some concepts are more important than others for the task at hand.
 
    The input vector $\mathbf{x}$ represents features capturing these concepts, defined by a sparsity level $S$ and an importance level $a_i$ for each feature $x_i$, reflecting the sparsity and varying importance of the underlying concepts. The model dynamics involve transforming $\mathbf{x}$ into a hidden representation $\mathbf{h}$ of lower dimension, and then reconstructing it as $\mathbf{x'}$:
- 
-  $$ 
-   \mathbf{h} = \mathbf{W}\mathbf{x}, \quad \mathbf{x'} = \text{ReLU}(\mathbf{W}^T\mathbf{h} + \mathbf{b})
-  $$ 
-   
+  
+  <div>
+   <p></p>
+  <div class="math-block" style="text-align: center;"> $\mathbf{h} = \mathbf{W}\mathbf{x}, \quad \mathbf{x'} = \text{ReLU}(\mathbf{W}^T\mathbf{h} + \mathbf{b}) $. </div>
+   <p></p>
+  </div>
+
    The network's performance is evaluated using a loss function $\mathcal{L}$ weighted by the feature importances $a_i$, reflecting the importance of the underlying concepts:
+   <div>
+   <p></p>
+   <div class="math-block" style="text-align: center;"> $ \mathcal{L}= \sum_{x}\sum_{i} a_i (x_i - x'_i)^2 $.</div>
+   <p></p>
+  </div>
  
-  $$ 
-   \mathcal{L}= \sum_{x}\sum_{i} a_i (x_i - x'_i)^2
-  $$ 
-   
    This toy model highlights neural networks' ability to encode numerous features representing real-world concepts into a compressed representation, providing insights into the superposition phenomenon observed in neural networks trained on real data.
 <figure id="fig:superposition">
  <div class="center-figure">
@@ -555,19 +559,28 @@ Recent advancements have focused on improving sparse autoencoder performance and
     
     The autoencoder architecture consists of an encoder and a ReLU activation function, expanding the input dimensionality to $d_{\text{hid}} > d_{\text{in}}$. The encoder's output is given by:
 
-    $$
-    \mathbf{h} = \text{ReLU}(\mathbf{W}_{\text{enc}}\mathbf{x}+\mathbf{b})
-    $$
+  <div>
+  <p></p>
+  <div class="math-block" style="text-align: center;">
+   $\mathbf{h} = \text{ReLU}(\mathbf{W}_{\text{enc}}\mathbf{x}+\mathbf{b})$,</div>
+  <p></p>
+  </div>
 
-    $$
-    {\mathbf{x'}} = \mathbf{W}_{\text{dec}}\mathbf{h} = \sum_{i=0}^{d_{\text{hid}}-1} h_i \mathbf{f}i 
-    $$
+  <div>
+  <p></p>
+     <div class="math-block" style="text-align: center;">
+    ${\mathbf{x'}} = \mathbf{W}_{\text{dec}}\mathbf{h} = \sum_{i=0}^{d_{\text{hid}}-1} h_i \mathbf{f}_i 
+    $,</div>
+  <p></p>
+  </div>
 
-    where $\mathbf{W}_{\text{enc}}, \mathbf{W}_{\text{dec}}^T \in \mathbb{R}^{d_{\text{hid}} \times d_{\text{in}}}$ and $\mathbf{b} \in \mathbb{R}^{d_{\text{hid}}}$. The parameter matrix $\mathbf{W}_{\text{dec}}$ forms the feature dictionary, with rows $\mathbf{f}_i$ as dictionary features. The autoencoder is trained to minimize the loss, where the $L^1$ penalty on $\mathbf{h}$ encourages sparse reconstructions using the dictionary features.
+    where $\mathbf{W}_{\text{enc}}, \mathbf{W}_{\text{dec}}^T \in \mathbb{R}^{d_{\text{hid}} \times d_{\text{in}}}$ and $\mathbf{b} \in \mathbb{R}^{d_{\text{hid}}}$. The parameter matrix $\mathbf{W}_{\text{dec}}$ forms the feature dictionary, with rows $\mathbf{f}_i$ as dictionary features. The autoencoder is trained to minimize the loss, where the $L^1$ penalty on $\mathbf{h}$ encourages sparse reconstructions using the dictionary features,
 
-    $$
-    \mathcal{L}(\mathbf{x}) = ||\mathbf{x} - {\mathbf{x'}}||_2^2 + \alpha ||\mathbf{h}||_1
-    $$
+  <div>
+  <p></p>
+<div class="math-block" style="text-align: center;">$\mathcal{L}(\mathbf{x}) = ||\mathbf{x} - {\mathbf{x'}}||_2^2 + \alpha ||\mathbf{h}||_1.$</div>
+  <p></p>
+  </div>
 
     <figure id="fig:sparse_autoencoder">
       <div class="center-figure">
@@ -611,7 +624,7 @@ The primary objective of activation patching is to isolate and understand the ro
 
 The standard protocol for activation patching ([Figure 9a](#fig:combined_patching)) involves: (step i) running the model with a clean input and caching the latent activations; (step ii) executing the model with a corrupted input; (step iii) re-running the model with the corrupted input but substituting specific activations with those from the clean cache; and (step iv) determining significance by observing the variations in the model's output during the third step, thereby highlighting the importance of the replaced components. This process relies on comparing pairs of inputs: a clean input, which triggers the desired behavior, and a corrupted input, which is identical to the clean one except for critical differences that prevent the behavior. By carefully selecting these inputs, researchers can *control for confounding circuitry* and isolate the specific circuit responsible for the behavior.
 
-Differences in patching direction—clean to corrupted (causal tracing) versus corrupted to clean (resample ablation)—provide insights into the sufficiency or necessity of model components for a given behavior. Clean to corrupted patching identifies activations sufficient for restoring clean performance, even if they are unnecessary due to redundancy, which is particularly informative in OR logic scenarios ([Figure 9b](#fig:combined_patching), A-OR-B). Conversely, corrupted to clean patching determines the necessary activations for clean performance, which is useful in AND logic scenarios ([Figure 9b](#fig:combined_patching), A-AND-B).
+Differences in patching direction—clean to corrupted (causal tracing) versus corrupted to clean (resample ablation)—provide insights into the sufficiency or necessity of model components for a given behavior. Clean to corrupted patching identifies activations sufficient for restoring clean performance, even if they are unnecessary due to redundancy, which is particularly informative in OR logic scenarios ([Figure 9b](#fig:combined_patching), OR gate). Conversely, corrupted to clean patching determines the necessary activations for clean performance, which is useful in AND logic scenarios ([Figure 9b](#fig:combined_patching), AND gate).
 
 Activation patching can employ corruption methods, including zero-, mean-, random-, or resample ablation, each modulating the model's internal state in distinct ways. Resample ablation stands out for its effectiveness in maintaining consistent model behavior by not changing the data distribution too much <d-cite key="zhang_best_2023"></d-cite>. However, it is essential to be careful when interpreting the patching results, as breaking behavior by taking the model off-distribution is uninteresting for finding the relevant circuit <d-cite key="nanda_how_2023"></d-cite>.
 
@@ -623,7 +636,7 @@ Recently, Ghandeharioun <em>et al.</em> <d-cite key="ghandeharioun_patchscopes_2
 
 #### Limitations and Advancements
 
-Activation patching has several limitations, including the effort required to design input templates and counterfactual datasets, the need for human inspection to isolate important subgraphs, and potential second-order effects that can complicate the interpretation of results <d-cite key="lange_interpretability_2023"></d-cite> and the {% term hydra effect %}  <d-cite key="mcgrath_hydra_2023,rushing_explorations_2024"></d-cite> (see discussion in [Section 7.2](#technical_limitations)). Recent advancements aim to address these limitations, such as automated circuit discovery algorithms <d-cite key="conmy_automated_2023"></d-cite>, gradient-based methods for scalable component importance estimation like attribution patching <d-cite key="nanda_attribution_2023,syed_attribution_2023"></d-cite>, and techniques to mitigate self-repair interferences during analysis <d-cite key="ferrando_information_2024"></d-cite>.
+Activation patching has several limitations, including the effort required to design input templates and counterfactual datasets, the need for human inspection to isolate important subgraphs, and potential second-order effects that can complicate the interpretation of results <d-cite key="lange_interpretability_2023"></d-cite> and the {% term hydra effect %}  <d-cite key="mcgrath_hydra_2023,rushing_explorations_2024"></d-cite> (see discussion in [Section 7.2](#technical-limitations)). Recent advancements aim to address these limitations, such as automated circuit discovery algorithms <d-cite key="conmy_automated_2023"></d-cite>, gradient-based methods for scalable component importance estimation like attribution patching <d-cite key="nanda_attribution_2023,syed_attribution_2023"></d-cite>, and techniques to mitigate self-repair interferences during analysis <d-cite key="ferrando_information_2024"></d-cite>.
 
 #### Causal Abstraction
 
@@ -637,7 +650,7 @@ Applications of causal abstraction span from linguistic phenomena analysis <d-ci
 
 In addition to the causal abstraction framework, several methods have been developed for rigorous hypothesis testing about neural network behavior. These methods aim to formalize and empirically validate explanations of how neural networks implement specific behaviors.
 
-*Causal scrubbing* <d-cite key="chan_causal_2022"></d-cite> formalizes hypotheses as a tuple $$(\mathcal{G}, \mathcal{I}, c)$$, where $$\mathcal{G}$$ is the model's computational graph, $$\mathcal{I}$$ is an interpretable computational graph hypothesized to explain the behavior, and $$c$$ maps nodes of $$\mathcal{I}$$ to nodes of $\mathcal{G}$. This method replaces activations in $$G$$ with others that should be equivalent according to the hypothesis, measuring performance on the scrubbed model to validate the hypothesis.
+*Causal scrubbing* <d-cite key="chan_causal_2022"></d-cite> formalizes hypotheses as a tuple $(\mathcal{G}, \mathcal{I}, c)$, where $\mathcal{G}$ is the model's computational graph, $\mathcal{I}$ is an interpretable computational graph hypothesized to explain the behavior, and $c$ maps nodes of $\mathcal{I}$ to nodes of $\mathcal{G}$. This method replaces activations in $G$ with others that should be equivalent according to the hypothesis, measuring performance on the scrubbed model to validate the hypothesis.
 
 *Locally consistent abstractions* <d-cite key="jenner_comparison_2023"></d-cite> offer a more permissive approach, checking the consistency between the neural network and the explanation only one step away from the intervention node. This method forms a middle ground between the strictness of full causal abstraction and the flexibility of causal scrubbing.
 
@@ -806,12 +819,13 @@ These adversarial dynamics, where the capabilities of the AI model are pitted ag
 
 Given the current limitations and challenges, several key research problems emerge as critical for advancing mechanistic interpretability. These problems span four main areas: emphasizing conceptual clarity ([Section 1](#clarifying-concepts)), establishing rigorous standards ([Section 2](#setting-standards)), improving the scalability of interpretability techniques ([Section 3](#scaling-techniques)), and expanding the research scope ([Section 4](#expanding-scope)). Each subsection presents specific research questions and challenges that need to be addressed to move the field forward.
 
-<div class="l-page">
-  <img src="{{ '/assets/img/posts/2024-08-23-future-mechinterp/future.png' | relative_url }}" alt="Roadmap for advancing mechanistic interpretability research" style="width:100%;">
-  <figcaption>
+<figure id="fig:future">
+  <img src="{{site.baseurl}}/assets/img/posts/2024-07-11-mechinterpreview/future.png" alt="Roadmap for advancing mechanistic interpretability research" style="width: 100%;">
+  <figcaption style="color: var(--global-text-color);">
     <strong>Figure 1:</strong> Roadmap for advancing mechanistic interpretability research, highlighting key strategic directions.
+    <a href="{{site.baseurl}}/assets/img/posts/2024-07-11-mechinterpreview/future.pdf" target="_blank">(View PDF)</a>
   </figcaption>
-</div>
+</figure>
 
 ## Clarifying Concepts
 
