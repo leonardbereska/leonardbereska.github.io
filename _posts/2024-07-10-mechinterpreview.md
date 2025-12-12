@@ -16,7 +16,7 @@ authors:
     affiliations:
       name: University of Amsterdam
 
-bibliography: 2024-07-10-mechinterpreview.bib
+bibliography: 2025-12-12-superposition.bib
 
 # Optionally, you can add a table of contents to your post.
 # NOTES:

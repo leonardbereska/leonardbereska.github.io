@@ -1,3 +1,37 @@
+@article{bereska_superposition_2025,
+	abbr={TMLR},
+  	preview={superposition},
+  	bibtex_show={true},
+	title = {Superposition as Lossy Compression --- Measure with Sparse Autoencoders and Connect to Adversarial Vulnerability},
+	author = {Bereska, Leonard F. and Tzifa-Kratira, Zoe and Samavi, Reza and Gavves, Stratis},
+  	year = {2025},
+  	month = {08},
+	journal = {TMLR},
+  	html = {https://leonardbereska.github.io/blog/2025/superposition/},
+	abstract = {Neural networks achieve remarkable performance through superposition: encoding multiple features as overlapping directions in activation space rather than dedicating individual neurons to each feature. This phenomenon challenges interpretability; when neurons respond to multiple unrelated concepts, understanding network behavior becomes difficult. Yet despite its importance, we lack principled methods to measure superposition. We present an information-theoretic framework measuring a neural representation's effective degrees of freedom. We apply Shannon entropy to sparse autoencoder activations to compute the number of effective features as the minimum number of neurons needed for interference-free encoding. Equivalently, this measures how many "virtual neurons" the network simulates through superposition. When networks encode more effective features than they have actual neurons, they must accept interference as the price of compression. Our metric strongly correlates with ground truth in toy models, detects minimal superposition in algorithmic tasks (effective features approximately equal neurons), and reveals systematic reduction under dropout. Layer-wise patterns of effective features mirror studies of intrinsic dimensionality on Pythia-70M. The metric also captures developmental dynamics, detecting sharp feature consolidation during the grokking phase transition. Surprisingly, adversarial training can increase effective features while improving robustness, contradicting the hypothesis that superposition causes vulnerability. Instead, the effect of adversarial training on superposition depends on task complexity and network capacity; simple tasks with ample capacity allow feature expansion (abundance regime), while complex tasks or limited capacity force feature reduction (scarcity regime). By defining superposition as lossy compression, this work enables principled, practical measurement of how neural networks organize information under computational constraints, in particular, connecting superposition to adversarial robustness.},
+	selected = {true},
+	pdf = {https://openreview.net/pdf?id=qaNP6o5qvJ},
+  	preview={superposition}
+}
+
+@article{bereska_mechanistic_2024,
+  abbr={TMLR},
+  bibtex_show={true},
+  title = {Mechanistic Interpretability for AI Safety — A Review},
+  author = {Bereska, Leonard F. and Gavves, Efstratios},
+  year = {2024},
+  month = apr,
+  journal = {TMLR},
+  eprint = {2404.14082},
+  html = {https://leonardbereska.github.io/blog/2024/mechinterpreview/},
+  abstract = {Understanding AI systems' inner workings is critical for ensuring value alignment and safety. This review explores mechanistic interpretability: reverse-engineering the computational mechanisms and representations learned by neural networks into human-understandable algorithms and concepts to provide a granular, causal understanding. We establish foundational concepts such as features encoding knowledge within neural activations and hypotheses about their representation and computation. We survey methodologies for causally dissecting model behaviors and assess the relevance of mechanistic interpretability to AI safety. We investigate challenges surrounding scalability, automation, and comprehensive interpretation. We advocate for clarifying concepts, setting standards, and scaling techniques to handle complex models and behaviors and expand to domains such as vision and reinforcement learning. Mechanistic interpretability could help prevent catastrophic outcomes as AI systems become more powerful and inscrutable.},
+  selected = {true},
+  pdf = {https://openreview.net/pdf?id=ePUVetPKu6},
+  preview={tmlr}
+}
+
+
+
 @article{bereska_continual_2022,
   abbr={CoLLAs},
   preview={collas1},
@@ -13,22 +47,6 @@
   urldate = {2024-07-03},
   abstract = {Machine learning recently proved efficient in learning differential equations and dynamical systems from data. However, the data is commonly assumed to originate from a single never-changing system. In contrast, when modeling real-world dynamical processes, the data distribution often shifts due to changes in the underlying system dynamics. Continual learning of these processes aims to rapidly adapt to abrupt system changes without forgetting previous dynamical regimes. This work proposes an approach to continual learning based on reservoir computing, a state-of-the-art method for training recurrent neural networks on complex spatiotemporal dynamical systems. Reservoir computing fixes the recurrent network weights - hence these cannot be forgotten - and only updates linear projection heads to the output. We propose to train multiple competitive prediction heads concurrently. Inspired by neuroscience's predictive coding, only the most predictive heads activate, laterally inhibiting and thus protecting the inactive heads from forgetting induced by interfering parameter updates. We show that this multi-head reservoir minimizes interference and catastrophic forgetting on several dynamical systems, including the Van-der-Pol oscillator, the chaotic Lorenz attractor, and the high-dimensional Lorenz-96 weather model. Our results suggest that reservoir computing is a promising candidate framework for the continual learning of dynamical systems. We provide our code for data generation, method, and comparisons at {\textbackslash}url\{https://github.com/leonardbereska/multiheadreservoir.\}},
   pdf = {https://proceedings.mlr.press/v199/bereska22a/bereska22a.pdf}
-}
-
-@article{bereska_mechanistic_2024,
-  abbr={TMLR},
-  bibtex_show={true},
-  title = {Mechanistic Interpretability for AI Safety — A Review},
-  author = {Bereska, Leonard F. and Gavves, Efstratios},
-  year = {2024},
-  month = apr,
-  journal = {TMLR},
-  eprint = {2404.14082},
-  html = {https://leonardbereska.github.io/blog/2024/mechinterpreview/},
-  abstract = {Understanding AI systems' inner workings is critical for ensuring value alignment and safety. This review explores mechanistic interpretability: reverse-engineering the computational mechanisms and representations learned by neural networks into human-understandable algorithms and concepts to provide a granular, causal understanding. We establish foundational concepts such as features encoding knowledge within neural activations and hypotheses about their representation and computation. We survey methodologies for causally dissecting model behaviors and assess the relevance of mechanistic interpretability to AI safety. We investigate challenges surrounding scalability, automation, and comprehensive interpretation. We advocate for clarifying concepts, setting standards, and scaling techniques to handle complex models and behaviors and expand to domains such as vision and reinforcement learning. Mechanistic interpretability could help prevent catastrophic outcomes as AI systems become more powerful and inscrutable.},
-  selected = {true},
-  pdf = {https://openreview.net/forum?id=ePUVetPKu6},
-  preview={tmlr}
 }
 
 @article{bereska_taming_2023,
