@@ -1,6 +1,5 @@
 @article{bereska_superposition_2025,
 	abbr={TMLR},
-  	preview={superposition},
   	bibtex_show={true},
 	title = {Superposition as Lossy Compression --- Measure with Sparse Autoencoders and Connect to Adversarial Vulnerability},
 	author = {Bereska, Leonard F. and Tzifa-Kratira, Zoe and Samavi, Reza and Gavves, Stratis},
@@ -11,7 +10,7 @@
 	abstract = {Neural networks achieve remarkable performance through superposition: encoding multiple features as overlapping directions in activation space rather than dedicating individual neurons to each feature. This phenomenon challenges interpretability; when neurons respond to multiple unrelated concepts, understanding network behavior becomes difficult. Yet despite its importance, we lack principled methods to measure superposition. We present an information-theoretic framework measuring a neural representation's effective degrees of freedom. We apply Shannon entropy to sparse autoencoder activations to compute the number of effective features as the minimum number of neurons needed for interference-free encoding. Equivalently, this measures how many "virtual neurons" the network simulates through superposition. When networks encode more effective features than they have actual neurons, they must accept interference as the price of compression. Our metric strongly correlates with ground truth in toy models, detects minimal superposition in algorithmic tasks (effective features approximately equal neurons), and reveals systematic reduction under dropout. Layer-wise patterns of effective features mirror studies of intrinsic dimensionality on Pythia-70M. The metric also captures developmental dynamics, detecting sharp feature consolidation during the grokking phase transition. Surprisingly, adversarial training can increase effective features while improving robustness, contradicting the hypothesis that superposition causes vulnerability. Instead, the effect of adversarial training on superposition depends on task complexity and network capacity; simple tasks with ample capacity allow feature expansion (abundance regime), while complex tasks or limited capacity force feature reduction (scarcity regime). By defining superposition as lossy compression, this work enables principled, practical measurement of how neural networks organize information under computational constraints, in particular, connecting superposition to adversarial robustness.},
 	selected = {true},
 	pdf = {https://openreview.net/pdf?id=qaNP6o5qvJ},
-  	preview={superposition}
+  	preview={superposition.png},
 }
 
 @article{bereska_mechanistic_2024,
@@ -27,7 +26,7 @@
   abstract = {Understanding AI systems' inner workings is critical for ensuring value alignment and safety. This review explores mechanistic interpretability: reverse-engineering the computational mechanisms and representations learned by neural networks into human-understandable algorithms and concepts to provide a granular, causal understanding. We establish foundational concepts such as features encoding knowledge within neural activations and hypotheses about their representation and computation. We survey methodologies for causally dissecting model behaviors and assess the relevance of mechanistic interpretability to AI safety. We investigate challenges surrounding scalability, automation, and comprehensive interpretation. We advocate for clarifying concepts, setting standards, and scaling techniques to handle complex models and behaviors and expand to domains such as vision and reinforcement learning. Mechanistic interpretability could help prevent catastrophic outcomes as AI systems become more powerful and inscrutable.},
   selected = {true},
   pdf = {https://openreview.net/pdf?id=ePUVetPKu6},
-  preview={tmlr}
+  preview={tmlr.png}
 }
 
 
@@ -51,7 +50,7 @@
 
 @article{bereska_taming_2023,
   abbr={AAAI-SS},
-  preview={aaai},
+  preview={aaai.png},
   bibtex_show={true},
   title = {Taming Simulators: Challenges, Pathways and Vision for the Alignment of Large Language Models},
   shorttitle = {Taming Simulators},
@@ -72,7 +71,7 @@
 
 @article{brenner_tractable_2022,
   abbr={ICML},
-  preview={icml},
+  preview={icml.png},
   bibtex_show={true},
   title = {Tractable Dendritic RNNs for Reconstructing Nonlinear Dynamical Systems},
   author = {Brenner, Manuel and Hess, Florian and Mikhaeil, Jonas M. and Bereska, Leonard F. and Monfared, Zahra and Kuo, Po-Chen and Durstewitz, Daniel},
@@ -88,7 +87,7 @@
 
 @article{lorenz_unsupervised_2019,
   abbr={CVPR},
-  preview={cvpr},
+  preview={cvpr.png},
   bibtex_show={true},
   title = {Unsupervised Part-Based Disentangling of Object Shape and Appearance},
   author = {Lorenz, Dominik and Bereska, Leonard F. and Milbich, Timo and Ommer, Bjorn},

@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: AI Safety Researcher | PhD Candidate at the <a href='https://www.uva.nl/en/profile/b/e/l.f.bereska/l.f.bereska.html'>University of Amsterdam</a>.
+subtitle: AI Safety Researcher | PhD Candidate at the University of Amsterdam
 
 profile:
   align: right
