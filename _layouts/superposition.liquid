@@ -50,6 +50,9 @@
     <meta name="citation_journal_title" content="Transactions on Machine Learning Research">
     <meta name="citation_abstract_html_url" content="https://openreview.net/forum?id=qaNP6o5qvJ">
     <meta name="citation_fulltext_html_url" content="https://leonardbereska.github.io/blog/2025/superposition">
+
+
+
   </head>
 
   <d-front-matter>
@@ -91,8 +94,29 @@
   </d-front-matter>
 
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+
+
+
+	  <style>
+
+
+	body {
+	    --global-theme-color: #53849D;
+	    --global-hover-color: #E8BF69;
+	    --global-code-bg-color: #F9FDFE;
+	}
+
+	/* Force everything to inherit text color in dark mode */
+	html[data-theme="dark"] body {
+		color: var(--global-text-color) !important;
+		--global-code-bg-color: #2c3237;
+	}
+
+
+	</style>
+		 
     <!-- Header -->
-    {% include header.liquid %}
+    {% comment %} {% include header.liquid %} {% endcomment %}
 
     <!-- Content -->
     <div class="post distill">
@@ -139,6 +163,8 @@
       </d-article>
 
       <d-appendix>
+  	<h3>Author Contributions</h3>
+	    <p><strong>L.B.</strong> conceived the project, developed the theoretical framework, designed and conducted all experiments except grokking, performed statistical analyses, and wrote the manuscript. <strong>Z.T.-K.</strong> conducted the grokking experiment and LLC comparison. <strong>R.S.</strong> and <strong>E.G.</strong> supervised the research.</p>
         <h3>Citation Information</h3>
         <p>Please cite as:</p>
         <pre class=citation>Bereska, L., Tzifa-Kratira, Z., Samavi, R. & Gavves, E. Superposition as Lossy Compression — Measure with Sparse Autoencoders and Connect to Adversarial Vulnerability. TMLR (2025). https://openreview.net/forum?id=qaNP6o5qvJ</pre>
@@ -164,6 +190,412 @@
 	<h3>Acknowledgments</h3>
 	<p>We thank Hamed Karimi for detailed feedback on the manuscript that improved clarity and presentation and discussions together with Daniel Sadig on adversarial training mechanisms. We are grateful to <a href="https://jackiebereska.github.io/">Jacqueline Bereska</a> for valuable suggestions on manuscript organization and prioritization. We thank the anonymous TMLR reviewers for their rigorous feedback, particularly on statistical methodology and theoretical foundations, which substantially strengthened this work.</p>
 	<p>Part of this research was conducted during L.B.'s visit to the <a href="https://tailab.org">Trustworthy AI Lab (TAILab)</a> at <a href="https://www.torontomu.ca">Toronto Metropolitan University</a>, directed by <a href="https://www.ee.torontomu.ca/~samavi/">Reza Samavi</a>. We are grateful for the stimulating research environment that facilitated the development of the core conceptual framework.</p>
+	
+	<hr style="margin-top: 1em;">
+	<p style="font-size: 1.15em; font-weight: bold;">Theoretical Foundations</p>
+
+	<h3 id="theoretical-foundations">Networks as Resource-Constrained Communication Channels</h3>
+
+	<p>Neural networks must transmit information through layers with limited dimensions. Each layer acts as a communication bottleneck where multiple features compete for neuronal bandwidth. When a network needs to represent $F$ features using only $N < F$ dimensions, it uses lossy compression: superposition.</p>
+
+	<p>This resource scarcity creates a natural analogy to communication theory. Just as telecommunications systems multiplex multiple signals through shared channels, neural networks multiplex multiple features through shared dimensions. Our measurement framework formalizes this intuition by quantifying how efficiently networks allocate their limited representational budget across competing features.</p>
+
+	{% comment %} <h3>$\ell_1$ Norm as Optimal Budget Allocation</h3> {% endcomment %}
+	<h3 id="l1-norm-budget">$\ell_1$ Norm as Optimal Budget Allocation</h3>
+
+	<p>The sparse autoencoder's $\ell_1$ regularization creates an explicit budget constraint on feature activations:</p>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$\mathcal{L}_{\text{SAE}} = \lVert\mathbf{h} - \mathbf{W}_{\text{sae}}^T \mathbf{z}\rVert_2^2 + \lambda \lVert\mathbf{z}\rVert_1$
+		</div>
+		<p></p>
+	</div>
+
+	<p>The penalty term $\lambda \lVert\mathbf{z}\rVert_1 = \lambda \sum_i \lvert z_i\rvert$ enforces that the total activation budget $\sum_i \lvert z_i\rvert$ remains bounded. This creates competition where features must justify their budget allocation by contributing to reconstruction quality.</p>
+
+	<p>From the first-order optimality conditions of SAE training, the magnitude $\lvert z_i\rvert$ for any active feature satisfies:</p>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$\lvert z_i\rvert = \frac{1}{\lambda} \lvert\mathbf{w}_i^T (\mathbf{h} - \mathbf{W}_{-i}^T \mathbf{z}_{-i})\rvert$
+		</div>
+		<p></p>
+	</div>
+
+	<p>where $\mathbf{W}_{-i}$ excludes feature $i$. This reveals that $\lvert z_i\rvert$ measures the marginal contribution of feature $i$ to reconstruction quality, exactly the budget allocation that optimally balances reconstruction accuracy against sparsity. Our probability distribution therefore has meaning as relative feature strength:</p>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$p_i = \frac{\mathbb{E}[\lvert z_i\rvert]}{\sum_j \mathbb{E}[\lvert z_j\rvert]} = \frac{\text{expected budget allocation to feature } i}{\text{total representational budget}}$
+		</div>
+		<p></p>
+	</div>
+
+	<p>This fraction represents how much of the network's limited representational resources are optimally allocated to feature $i$ under the SAE's constraints. Alternative norms fail to preserve this budget interpretation. The $\ell_2$ norm $\mathbb{E}[z_i^2]$ overweights outliers and breaks the linear connection to reconstruction contributions through squaring. The $\ell_\infty$ norm captures only peak activation while ignoring frequency of use. The $\ell_0$ norm provides binary active/inactive information but loses the magnitude data essential for measuring resource allocation intensity.</p>
+
+	<h3 id="hill-numbers">Shannon Entropy as Information Capacity Measure</h3>
+
+	<p>Given the budget allocation distribution $p$, the exponential of Shannon entropy provides the theoretically optimal feature count. The exponential of Shannon entropy, $\exp(H)$, is formally known as perplexity in information theory and the Hill number (order-1 diversity index) in ecology <d-cite key="hill_diversity_1973,jost_entropy_2006"></d-cite>:</p>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$\text{PP}(p) = \exp\left(-\sum_i p_i \log p_i\right) = \prod_{i=1}^n p_i^{-p_i}$
+		</div>
+		<p></p>
+	</div>
+
+	<p>This quantifies the effective number of outcomes in a probability distribution: how many equally likely outcomes would yield identical uncertainty. In information theory, it represents the effective alphabet size of a communication system <d-cite key="jelinek_perplexity_1977"></d-cite>. In ecology, it quantifies the effective number of species in an ecosystem <d-cite key="jost_entropy_2006"></d-cite>. In statistical physics, it relates to the number of accessible states in a system <d-cite key="jaynes_information_1957"></d-cite>. In quantum mechanics, it corresponds to the effective number of pure quantum states in a mixed state <d-cite key="schrodinger_discussion_1935"></d-cite>.</p>
+
+	<p>Shannon entropy uniquely satisfies the mathematical properties required for principled feature counting <d-cite key="anand_shannon_2011"></d-cite>. The measure exhibits coding optimality, equaling the minimum expected code length for optimal compression. It satisfies additivity for independent feature sets through $H(p \otimes q) = H(p) + H(q)$. Small changes in feature importance yield small changes in measured count through continuity. Uniform distributions where all features are equally important maximize the count. Adding features with positive probability monotonically increases the count. These axioms uniquely characterize Shannon entropy up to a multiplicative constant, making $\exp(H(p))$ the theoretically principled choice for aggregating feature importance into an effective count.</p>
+
+	<p>Higher-order Hill numbers provide different sensitivities to rare versus common features:</p>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$^q\text{D} = \left( \sum_{i=1}^n p_i^q \right)^{1/(1-q)}$
+		</div>
+		<p></p>
+	</div>
+
+	<p>where $q=1$ gives our exponential entropy measure (via L'Hôpital's rule), $q=0$ counts non-zero components, and $q=2$ gives the inverse Simpson concentration index (participation ratio in statistical mechanics).</p>
+
+	<h3>Quantum Entanglement Analogy</h3>
+
+	<p>In quantum systems, von Neumann entropy $S(\rho) = -\text{Tr}(\rho \log \rho)$ measures entanglement, with $e^{S(\rho)}$ representing effective pure states participating in a mixed quantum state <d-cite key="nielsen_quantum_2011"></d-cite>. Neural superposition exhibits parallel structure: just as quantum entanglement creates non-separable correlations that cannot be decomposed into independent subsystem states, neural superposition creates feature representations that cannot be cleanly separated into individual neuronal components. Both phenomena involve compressed encoding of information: quantum entanglement distributes correlations across subsystems resisting local description, while neural superposition distributes features across neurons resisting individual interpretation. Our measure $e^{H(p)}$ captures this compression by quantifying the effective number of features participating in the neural representation, analogous to how $e^{S(\rho)}$ quantifies effective pure states in an entangled quantum mixture.</p>
+
+	<h3>Rate-Distortion Theoretical Foundation</h3>
+
+	<p>Our measurement framework emerges from two nested rate-distortion problems that formalize the intuitive resource allocation perspective. The neural network layer itself solves:</p>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$R_{\text{NN}}(D) = \min_{p(\mathbf{h}\lvert\mathbf{x}): \mathbb{E}[d(\mathbf{y}, f(\mathbf{h}))] \leq D} I(\mathbf{X}; \mathbf{H})$
+		</div>
+		<p></p>
+	</div>
+
+	<p>where the layer width $N$ constrains the mutual information $I(\mathbf{X}; \mathbf{H})$ that can be transmitted, while $D$ represents acceptable task performance degradation. When the optimal solution requires representing $F > N$ features, superposition emerges naturally as the rate-optimal encoding strategy.</p>
+
+	<p>The sparse autoencoder solves a complementary problem:</p>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$R_{\text{SAE}}(D) = \min_{p(\mathbf{z}\lvert\mathbf{h}): \mathbb{E}[\lVert\mathbf{h} - \hat{\mathbf{h}}\rVert_2^2] \leq D} \mathbb{E}[\lVert\mathbf{z}\rVert_1]$
+		</div>
+		<p></p>
+	</div>
+
+	<p>where sparsity $\lVert\mathbf{z}\rVert_1$ acts as the rate constraint and reconstruction error as distortion. This dual structure justifies SAE-based measurement: we quantify the effective rate required to represent the network's compressed internal information under sparsity constraints.</p>
+
+	<p>The SAE optimization can be viewed as an information bottleneck problem balancing information preservation $\mathbb{E}[\lVert\mathbf{h} - g(\mathbf{z})\rVert_2^2]$ against information cost $\lambda \mathbb{E}[\lVert\mathbf{z}\rVert_1]$. Under this interpretation, $\mathbb{E}[\lvert z_i\rvert]$ represents the information cost of including feature $i$ in the compressed representation, making our probability distribution a natural measure of information allocation across features.</p>
+
+	<h3>Critical Assumptions and Failure Modes</h3>
+
+	<p>Our method measures effective representational diversity under sparse linear encoding, which approximates but does not exactly equal the number of distinct computational features. We must carefully assess the conditions under which this approximation holds.</p>
+
+	<p><em>Feature Correspondence Assumption.</em> We assume SAE dictionary elements correspond one-to-one with genuine computational features. This assumption fails through feature splitting where one computational feature decomposes into multiple SAE features, artificially inflating counts; feature merging combines multiple computational features into one SAE feature, deflating counts; ghost features represent SAE artifacts without computational relevance <d-cite key="gao_scaling_2024"></d-cite>; incomplete coverage occurs when SAEs miss computationally relevant features entirely.</p>
+
+	<p><em>Linear Representation Assumption.</em> We assume features combine primarily through linear superposition in activation space. Real networks violate this through hierarchical structure where low-level and high-level features aren't interchangeable; gating mechanisms allow some features to control whether others activate <d-cite key="elhage_toy_2022"></d-cite>; combinatorial interactions emerge when meaning comes from feature combinations rather than individual contributions <d-cite key="black_interpreting_2022"></d-cite>.</p>
+
+	<p><em>Magnitude-Importance Correspondence.</em> We assume $\lvert z_i\rvert$ reflects feature $i$'s computational importance. This breaks when SAE reconstruction preserves irrelevant details while missing computational essentials; when features interact nonlinearly in downstream processing <d-cite key="engels_not_2024"></d-cite>; or when feature importance depends heavily on context rather than magnitude.</p>
+
+	<p><em>Independent Information Assumption.</em> We assume Shannon entropy correctly aggregates information across features. This fails when correlated features don't contribute independent information; when synergistic information means feature pairs provide more information together than separately; or when redundant encoding has multiple features encoding identical computational factors.</p>
+
+	<p>The approximation captures genuine signal about representational complexity under specific conditions. The measure works best when features combine primarily through linear superposition, activation patterns are sparse with balanced importance, SAEs achieve high reconstruction quality on computationally relevant information, and representational structure is relatively flat rather than hierarchical. The approximation degrades with highly hierarchical representations, dense activation patterns with complex feature interactions, poor SAE reconstruction quality, or extreme feature importance skew. Despite these limitations, the measure provides principled approximation rather than exact counting, with primary value in comparative analysis across networks and training regimes.</p>
+
+	<h3>Why Eigenvalue Decomposition Fails for SAE Analysis</h3>
+
+	<p>Following the quantum entanglement analogy, one might consider eigenvalue decomposition of the covariance matrix:</p>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$\mathbf{\Sigma} = \frac{1}{n}\mathbf{A}\mathbf{A}^T$
+		</div>
+		<p></p>
+	</div>
+
+	<p>where $\mathbf{A}$ represents the activation matrix. Eigenvalues $\{\lambda_1, \lambda_2, \ldots, \lambda_n\}$ represent explained variance along principal components, normalized to form a probability distribution:</p>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$p_i = \frac{\lambda_i}{\sum_{i=1}^n \lambda_i}$
+		</div>
+		<p></p>
+	</div>
+
+	<p>This approach faces fundamental rank deficiency when applied to SAEs. Expanding from lower dimension ($N$ neurons) to higher dimension ($D > N$ dictionary elements) yields covariance matrices with rank at most $N$, making detection of more than $N$ features impossible regardless of SAE capacity.</p>
+
+	<p>Our activation-based approach circumvents this limitation by directly measuring feature utilization through activation magnitude distributions rather than intrinsic dimensionality. This enables superposition quantification with overcomplete SAE dictionaries.</p>
+
+	<h3 id="convolutional-networks">Adaptation to Convolutional Networks</h3>
+
+	<p>Convolutional neural networks organize features across channels rather than spatial locations. For CNN layers with activations $\mathcal{X} \in \mathbb{R}^{B \times C \times H \times W}$, we measure superposition across the channel dimension while accounting for spatial structure.</p>
+
+	<p>We extract features from each spatial location's channel vector independently, then aggregate when computing feature probabilities:</p>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$p_i = \frac{\sum_{b,h,w} \lvert z_{b,i,h,w}\rvert}{\sum_{j=1}^D \sum_{b,h,w} \lvert z_{b,j,h,w}\rvert}$
+		</div>
+		<p></p>
+	</div>
+
+	<p>where $z_{b,i,h,w}$ represents feature $i$'s activation at spatial position $(h,w)$ in sample $b$.</p>
+
+	<p>This aggregation treats the same semantic feature activating at different spatial locations (e.g., edge detectors firing everywhere) as evidence for a single feature's importance rather than separate features.</p>
+
+	{% comment %} <h2>Experimental Details</h2> {% endcomment %}
+
+	<hr style="margin-top: 1em;">
+	<p style="font-size: 1.15em; font-weight: bold;">Experimental Details</p>
+{% comment %} 	<p><strong>Experimental Details</strong></p> {% endcomment %}
+
+	<h3>Tracr Compression</h3>
+
+	<p>We compile RASP programs using Tracr's standard pipeline with vocabulary {1, 2, 3, 4, 5} and maximum sequence length 5. The sequence reversal program uses position-based indexing, while sorting employs Tracr's built-in sorting primitive with these parameters.</p>
+
+	<p>Following <d-cite key="lindner_tracr_2023"></d-cite>, we train compression matrices using a dual objective that ensures compressed models maintain both computational equivalence and representational fidelity:</p>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$\mathcal{L} = \lambda_{\text{out}} \mathcal{L}_{\text{out}} + \lambda_{\text{layer}} \mathcal{L}_{\text{layer}}$
+		</div>
+		<p></p>
+	</div>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$\mathcal{L}_{\text{out}} = \text{KL}(\text{softmax}(\mathbf{y}_c), \text{softmax}(\mathbf{y}_o))$
+		</div>
+		<p></p>
+	</div>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$\mathcal{L}_{\text{layer}} = \frac{1}{L} \sum_{i=1}^L \lVert\mathbf{h}_i^{(o)} - \mathbf{h}_i^{(c)}\rVert_2^2$
+		</div>
+		<p></p>
+	</div>
+
+	<p>where $\mathbf{y}_c$ and $\mathbf{y}_o$ denote compressed and original logits, and $\mathbf{h}_i^{(o)}$, $\mathbf{h}_i^{(c)}$ represent original and compressed activations at layer $i$.</p>
+
+	<p><strong>Hyperparameters:</strong> $\lambda_{\text{out}} = 0.01$, $\lambda_{\text{layer}} = 1.0$, learning rate $10^{-3}$, temperature $\tau = 1.0$, maximum 500 epochs with early stopping at 100% accuracy. We use Adam optimization and train separate compression matrices for each trial. For each compressed model achieving perfect accuracy, we extract activations from all residual stream positions across 5 trials. SAEs use fixed dictionary size 100, L1 coefficient 0.1, learning rate $10^{-3}$, training for 300 epochs with batch size 128. We analyze the final layer activations (post-MLP) for consistency across compression factors.</p>
+
+	<h3>Multi-Task Sparse Parity Experiments</h3>
+
+	<p><strong>Dataset Construction.</strong> We use the multi-task sparse parity dataset from <d-cite key="michaud_quantization_2023"></d-cite> with 3 tasks and 4 bits per task. Each input consists of a 3-dimensional one-hot control vector concatenated with 12 data bits (total dimension 15). For each sample, the control vector specifies which task is active, and the label is computed as the parity (sum modulo 2) of the 4 bits corresponding to that task. This creates a dataset where ground truth bounds the number of meaningful features while maintaining task complexity.</p>
+
+	<p><strong>Model Architecture.</strong> Simple MLPs with architecture Input(15) $\rightarrow$ Linear(h) $\rightarrow$ ReLU $\rightarrow$ Linear(1), where $h \in \{16, 32, 64, 128, 256\}$ for capacity experiments. We apply interventions (dropout) to hidden activations before the ReLU nonlinearity. Training uses Adam optimizer (lr=0.001), batch size 64, for 300 epochs with BCEWithLogitsLoss. Dataset split: 80% train, 20% test with stratification by task and label.</p>
+
+	<p><strong>Intervention Protocols.</strong> Dropout experiments are applied to hidden activations with rates [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]. Dictionary scaling uses expansion factors [0.5, 1.0, 2.0, 4.0, 8.0, 16.0] relative to hidden dimension, with L1 coefficients [0.01, 0.1, 1.0, 10.0], maximum dictionary size capped at 1024. Each configuration is tested across 5 random seeds with 3 SAE instances per configuration for stability measurement.</p>
+
+	<p><strong>SAE Architecture and Training.</strong> Standard autoencoder with tied weights:</p>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$\mathbf{z} = \text{ReLU}(\mathbf{W}_{\text{enc}}\mathbf{x} + \mathbf{b})$
+		</div>
+		<p></p>
+	</div>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$\mathbf{x'} = \mathbf{W}_{\text{dec}}\mathbf{z}$
+		</div>
+		<p></p>
+	</div>
+
+	<p>where $\mathbf{W}_{\text{dec}} = \mathbf{W}_{\text{enc}}^T$. Dictionary size is typically $4 \times$ layer width unless specified otherwise. Loss function:</p>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$\mathcal{L} = \lVert\mathbf{x} - \mathbf{x'}\rVert_2^2 + \lambda \lVert\mathbf{z}\rVert_1$
+		</div>
+		<p></p>
+	</div>
+
+	<p>with L1 coefficient $\lambda = 0.1$ (unless testing $\lambda$ sensitivity). Adam optimizer (lr=0.001), batch size 128, 300 epochs. For stability analysis, we train 3–5 SAE instances per configuration with different random seeds and report mean $\pm$ standard deviation.</p>
+
+	<h3>Grokking</h3>
+
+	<p><strong>Task and Architecture.</strong> Modular arithmetic task: $(a + b) \bmod 53$ using sparse training data (40% of all possible pairs, 60% held out for testing). Model architecture: two-path MLP with shared embeddings.</p>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$\mathbf{e}_a = \text{Embedding}(a, \text{dim}=12)$
+		</div>
+		<p></p>
+	</div>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$\mathbf{e}_b = \text{Embedding}(b, \text{dim}=12)$
+		</div>
+		<p></p>
+	</div>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$\mathbf{h} = \text{GELU}(\mathbf{W}_1 \mathbf{e}_a + \mathbf{W}_2 \mathbf{e}_b)$
+		</div>
+		<p></p>
+	</div>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$\text{logits} = \mathbf{W}_3 \mathbf{h}$
+		</div>
+		<p></p>
+	</div>
+
+	<p>where $\mathbf{W}_1, \mathbf{W}_2 \in \mathbb{R}^{48 \times 12}$ and $\mathbf{W}_3 \in \mathbb{R}^{53 \times 48}$.</p>
+
+	<p><strong>Training Configuration.</strong> 25,000 training steps, learning rate 0.005, batch size 128, weight decay 0.0002. Model checkpoints saved every 250 steps (100 total checkpoints). Random seed 0 for reproducibility.</p>
+
+	<p><strong>LLC Estimation Protocol.</strong> Local Learning Coefficient estimated using Stochastic Gradient Langevin Dynamics (SGLD) with hyperparameters: learning rate $3 \times 10^{-3}$, localization parameter $\gamma = 5.0$, effective inverse temperature $n_\beta = 2.0$, 500 MCMC samples across 2 independent chains. Hyperparameters selected via $5 \times 5$ grid search over epsilon range $[3 \times 10^{-5}, 3 \times 10^{-1}]$ ensuring $\varepsilon > 0.001$ for stability and $n_\beta < 100$ for $\beta$-independence.</p>
+
+	<h3>Pythia-70M Analysis</h3>
+
+	<p><strong>Data Sampling and Preprocessing.</strong> 20,000 samples from Pile dataset <d-cite key="gao_pile_2020"></d-cite>, shuffled with seeds [42, 123, 456] for reproducibility. Text preprocessing: truncate to 512 characters before tokenization to prevent memory issues. Tokenization using model's native tokenizer with max_length=512, truncation=True, no padding. Samples with empty text or tokenization failures excluded.</p>
+
+	<p><strong>Model and SAE Configuration.</strong> Pythia-70M model with layer specifications: embedding layer, and {attn_out, mlp_out, resid_out} for layers 0–5. Pretrained SAEs from <d-cite key="marks_sparse_2024"></d-cite> with dictionary size $64 \times 512 = 32,768$ features per layer. SAE weights loaded from subdirectories following pattern: layer_type/10_32768/ae.pt.</p>
+
+	<p><strong>Activation Processing.</strong> Activations extracted using nnsight tracing with error handling for failed forward passes. Feature activations accumulated across all token positions and samples:</p>
+
+	<div>
+		<p></p>
+		<div class="math-block" style="text-align: center;">
+			$\text{feature\_sum}_i = \sum_{\text{samples}, \text{positions}} \lvert\mathbf{z}_i\rvert$
+		</div>
+		<p></p>
+	</div>
+
+	<p>Feature count computed from accumulated sums using entropy-based measure. Memory management: explicit cleanup of activation tensors and CUDA cache clearing between seeds.</p>
+
+	{% comment %} <hr style="margin-top: 1em;"> {% endcomment %}
+	{% comment %} <p style="font-size: 1.15em; font-weight: bold;">Adversarial Robustness</p> {% endcomment %}
+	<h3>Adversarial Robustness</h3>
+
+	<p><strong>Model Architectures</strong></p>
+
+	<p><strong>Simple Models (Single Hidden Layer)</strong></p>
+
+	<ul>
+		<li><strong>SimpleMLP:</strong> Input(784) → Linear($h$) → ReLU → Linear(output)
+			<ul>
+				<li>Hidden dimensions $h \in \{8, 32, 128, 512\}$</li>
+			</ul>
+		</li>
+		<li><strong>SimpleCNN:</strong> Input → Conv2d($h$, 5×5) → ReLU → MaxPool(2) → Linear(output)
+			<ul>
+				<li>Filter counts $h \in \{8, 16, 32, 64\}$</li>
+			</ul>
+		</li>
+	</ul>
+
+	<p><strong>Standard Models</strong></p>
+
+	<ul>
+		<li><strong>StandardMLP:</strong> Input(784) → Linear(4$h$) → ReLU → Linear(2$h$) → ReLU → Linear($h$) → ReLU → Linear(output)
+			<ul>
+				<li>Base dimension $h = 32$, yielding layer widths [128, 64, 32]</li>
+			</ul>
+		</li>
+		<li><strong>StandardCNN:</strong> LeNet-style architecture
+			<ul>
+				<li>Conv2d(1, $h$, 3×3) → ReLU → MaxPool(2)</li>
+				<li>Conv2d($h$, 2$h$, 3×3) → ReLU → MaxPool(2)</li>
+				<li>Linear(4$h$) → ReLU → Linear(output)</li>
+				<li>Base dimension $h = 16$</li>
+			</ul>
+		</li>
+	</ul>
+
+	<p><strong>CIFAR-10 Models</strong></p>
+
+	<ul>
+		<li><strong>CIFAR10CNN:</strong> Three-block CNN with batch normalization
+			<ul>
+				<li>Conv2d(3, $h$, 3×3) → BN → ReLU → MaxPool(2)</li>
+				<li>Conv2d($h$, 2$h$, 3×3) → BN → ReLU → MaxPool(2)</li>
+				<li>Conv2d(2$h$, 4$h$, 3×3) → BN → ReLU → MaxPool(2)</li>
+				<li>Dropout(0.2) → Linear(output)</li>
+				<li>Base dimension $h = 32$</li>
+			</ul>
+		</li>
+		<li><strong>ResNet-18:</strong> Modified for CIFAR-10
+			<ul>
+				<li>Initial: Conv2d(3, 64, 3×3, stride=1, padding=1)</li>
+				<li>MaxPool replaced with Identity</li>
+				<li>Standard ResNet-18 blocks [2, 2, 2, 2]</li>
+			</ul>
+		</li>
+		<li><strong>WideResNet:</strong> ResNet-18 with variable width
+			<ul>
+				<li>Width factors: $1/16, 1/8, 1/4, 1/2, 1, 2, 4, 8$</li>
+				<li>Initial channels: $16 \times$ width factor</li>
+				<li>Block channels: $16, 32, 64, 128 \times$ width factor</li>
+			</ul>
+		</li>
+	</ul>
+
+	<p><strong>Training Protocols</strong></p>
+
+	<p><strong>MNIST/Fashion-MNIST:</strong></p>
+
+	<ul>
+		<li>Optimizer: SGD with momentum 0.9</li>
+		<li>Learning rate: 0.01, MultiStep decay at epochs [50, 75]</li>
+		<li>Weight decay: $10^{-4}$</li>
+		<li>Epochs: 100</li>
+		<li>Batch size: 128</li>
+		<li>PGD: 40 steps, step size $\alpha = 0.01$</li>
+		<li>FGSM: Single step, $\alpha = \epsilon$</li>
+	</ul>
+
+	<p><strong>CIFAR-10:</strong></p>
+
+	<ul>
+		<li>Optimizer: SGD with momentum 0.9</li>
+		<li>Learning rate: 0.1, MultiStep decay at epochs [100, 150]</li>
+		<li>Weight decay: $5 \times 10^{-4}$</li>
+		<li>Epochs: 200</li>
+		<li>Batch size: 128</li>
+		<li>PGD: 10 steps, step size $\alpha = 2/255$</li>
+		<li>FGSM: Single step, $\alpha = \epsilon$</li>
+	</ul>
+
+	<p style="font-weight: bold; margin-top: 1.5em;">SAE Configuration</p>
+
+	<ul>
+		<li>Dictionary size: $4N$ (4× layer width)</li>
+		<li>L1 coefficient: 0.1</li>
+		<li>Optimizer: Adam, learning rate $10^{-3}$</li>
+		<li>Training: 800 epochs with early stopping (patience 50)</li>
+		<li>Activation collection: 10,000 samples from test set</li>
+		<li>Separate SAEs trained per layer</li>
+	</ul>
 	<d-citation-list></d-citation-list>
       </d-appendix>
 

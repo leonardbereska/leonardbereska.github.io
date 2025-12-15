@@ -72,6 +72,10 @@ d-article {
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
     }
+    // d-math,
+    // d-math * {
+	    // color: var(--global-text-color) !important;
+    // }
   }
 
   d-contents {
@@ -224,6 +228,11 @@ body .definition-content {
   margin: 0;
   padding: 0 5px;
   color: var(--definition-text) !important; 
+  //color for <d-math> tags
+  d-math,
+  d-math * {
+    color: var(--definition-text) !important;
+  }
   .d-cite {
     color: var(--global-text-color) !important;
   }
@@ -262,6 +271,10 @@ body .hypothesis-content {
   margin: 0;
   padding: 0 5px;
   color: var(--hypothesis-text) !important; 
+  d-math,
+  d-math * {
+    color: var(--hypothesis-text) !important;
+  }
   .d-cite {
     color: var(--global-text-color) !important;
   }
@@ -279,6 +292,7 @@ body .hypothesis-content {
 
   }
 }
+
 
 body .explanation-box {
   background-color: var(--explanation-bg);
@@ -301,6 +315,11 @@ body .explanation-content {
   margin: 0;
   padding: 0 5px;
   color: var(--explanation-text) !important; 
+  //color for <d-math> tags	
+  d-math,
+  d-math * {
+    color: var(--explanation-text) !important;
+  }
   // color for <strong> tags
   strong {
     color: var(--explanation-text) !important;
@@ -323,6 +342,62 @@ body .explanation-content {
   
 
 }
+
+// Generic box styling with external color control
+body .custom-box {
+  background-color: var(--box-bg-color, #F9FDFE);
+  border: 1px solid var(--box-border-color, #8DA5AF);
+  border-left: 4px solid var(--box-border-color, #8DA5AF);
+  border-radius: 8px;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+body .custom-title {
+  color: var(--box-border-color, #8DA5AF) !important;
+  background-color: transparent;
+  padding: 5px 10px;
+  margin: -10px -10px 10px -10px;
+  border-radius: 6px 6px 0 0;
+  font-weight: bold;
+  font-size: 0.95em;
+}
+
+body .custom-content {
+  margin: 0;
+  padding: 0 5px;
+  color: var(--box-text-color, #8DA5AF) !important;
+
+  d-math,
+  d-math * {
+    color: var(--box-text-color, #8DA5AF) !important;
+  }
+
+  li {
+    color: var(--box-text-color, #8DA5AF) !important;
+  }
+
+  ul {
+    color: var(--box-text-color, #8DA5AF) !important;
+  }
+  
+  strong {
+    color: var(--box-text-color, #8DA5AF) !important;
+  }
+  
+  em {
+    color: var(--box-text-color, #8DA5AF) !important;
+  }
+  
+  ul {
+    margin-bottom: 0;
+  }
+  
+  li {
+    margin-bottom: 0.5em;
+  }
+}
+
 
 .center-figure {
   display: flex;

@@ -7,8 +7,10 @@
   --global-code-bg-color: #{$code-bg-color-light};
   --global-text-color: #{$black-color};
   --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$turquoise-color};
-  --global-hover-color: #{$turquoise-color};
+  // --global-theme-color: #{$turquoise-color};
+  --global-theme-color: #{$superposition-blue};
+  // --global-hover-color: #{$turquoise-color};
+  --global-hover-color: #{$superposition-orange};
   --global-hover-text-color: #{$white-color};
   --global-footer-bg-color: #{$grey-color-dark};
   --global-footer-text-color: #{$grey-color-light};
@@ -96,8 +98,9 @@ html[data-theme="dark"] {
   --global-code-bg-color: #{$code-bg-color-dark};
   --global-text-color: #{$grey-color-light};
   --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$orange-color};
-  --global-hover-color: #{$orange-color};
+  // --global-theme-color: #{$orange-color};
+  --global-theme-color: #{$superposition-orange};
+  --global-hover-color: #{$superposition-blue};
   --global-hover-text-color: #{$white-color};
   --global-footer-bg-color: #{$grey-color-light};
   --global-footer-text-color: #{$grey-color-dark};
@@ -137,32 +140,6 @@ html[data-theme="dark"] {
   --hypothesis-title-text: #{$white-color}; 
   --hypothesis-text: #{$black-color}; 
 
-
-  // /* Aggressive MathJax styling */
-  // mjx-container[jax="CHTML"][display="true"],
-  // mjx-container[jax="CHTML"][display="true"] mjx-math,
-  // mjx-container[jax="CHTML"][display="true"] mjx-math *,
-  // mjx-container[jax="CHTML"]:not([display="true"]),
-  // mjx-container[jax="CHTML"]:not([display="true"]) mjx-math,
-  // mjx-container[jax="CHTML"]:not([display="true"]) mjx-math * {
-  //   color: var(--global-text-color) !important;
-  //   border-color: var(--global-text-color) !important;
-  // }
-
-  // /* For SVG output */
-  // mjx-container[jax="SVG"] path,
-  // mjx-container[jax="SVG"] use {
-  //   stroke: var(--global-text-color) !important;
-  //   fill: var(--global-text-color) !important;
-  // }
-
-  
-  // .MathJax, .MathJax_Display, .MathJax *, .MathJax_SVG *, .MathJax_SVG_Display *,
-  // .katex, .katex *, .katex-display *, .katex-html * {
-  //   color: var(--global-text-color) !important;
-  //   border-color: var(--global-text-color) !important;
-  //   stroke: var(--global-text-color) !important;
-  // }
 
   .repo-img-light {
     display: none;

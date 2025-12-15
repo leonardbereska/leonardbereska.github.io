@@ -16,7 +16,7 @@ authors:
     affiliations:
       name: University of Amsterdam
 
-bibliography: 2025-12-12-superposition.bib
+bibliography: 2024-07-10-mechinterpreview.bib
 
 # Optionally, you can add a table of contents to your post.
 # NOTES:
@@ -196,15 +196,14 @@ The {% term superposition %} hypothesis suggests that neural networks can levera
 
 <div class="explanation-box">
  <h4 class="explanation-title">Toy Model of Superposition</h4>
- <p class="explanation-content">
+ <div class="explanation-content">
    A toy model <d-cite key="elhage_toy_2022"></d-cite> investigates the hypothesis that neural networks can represent more {% term features %} than the number of neurons by encoding real-world {% term concepts %} in a compressed manner. The model considers a high-dimensional vector $\mathbf{x}$, where each element $x_i$ corresponds to a feature capturing a real-world concept, represented as a random vector with varying importance determined by a weight $a_i$. These features are assumed to have the following properties: 1) <strong>Concept sparsity</strong>: Real-world concepts occur sparsely. 2) <strong>More concepts than neurons</strong>: The number of potential concepts vastly exceeds the available neurons. 3) <strong>Varying concept importance</strong>: Some concepts are more important than others for the task at hand.
 
    The input vector $\mathbf{x}$ represents features capturing these concepts, defined by a sparsity level $S$ and an importance level $a_i$ for each feature $x_i$, reflecting the sparsity and varying importance of the underlying concepts. The model dynamics involve transforming $\mathbf{x}$ into a hidden representation $\mathbf{h}$ of lower dimension, and then reconstructing it as $\mathbf{x'}$:
-  
   <div>
-   <p></p>
+  <p></p>
   <div class="math-block" style="text-align: center;"> $\mathbf{h} = \mathbf{W}\mathbf{x}, \quad \mathbf{x'} = \text{ReLU}(\mathbf{W}^T\mathbf{h} + \mathbf{b}) $. </div>
-   <p></p>
+  <p></p>
   </div>
 
    The network's performance is evaluated using a loss function $\mathcal{L}$ weighted by the feature importances $a_i$, reflecting the importance of the underlying concepts:
@@ -224,7 +223,7 @@ The {% term superposition %} hypothesis suggests that neural networks can levera
      <strong>Figure 4:</strong> Illustration of the toy model architecture and the effects of sparsity. <strong>(left)</strong> Transformation of a five-feature input vector $\mathbf{x}$ into a two-dimensional hidden representation $\mathbf{h}$, and its reconstruction as $\mathbf{x}'$ using the weight matrix $W$ and its transpose, with feature importance indicated by a color gradient from yellow to green. <strong>(right)</strong> The effect of increasing feature sparsity $S$ on the encoding capacity of the network, highlighting the network's enhanced ability to represent features in superposition as sparsity increases from $0$ to $0.9$, illustrated by arrows in the activation space $\mathbf{h}$, which correspond to the columns of the matrix $W$. <a href="{{site.baseurl}}/assets/img/posts/2024-07-11-mechinterpreview/superposition.pdf" target="_blank">(View PDF)</a>
    </figcaption>
  </figure>
- </p>
+ </div>
 </div>
 
 Toy models can demonstrate under which conditions superposition occurs <d-cite key="elhage_toy_2022,scherlis_polysemanticity_2023"></d-cite>. Neural networks, via superposition, may effectively simulate computation with more neurons than they possess by allocating each feature to a linear combination of neurons, creating what is known as an overcomplete linear basis in the representation space. This perspective on superposition suggests that polysemantic models could be seen as compressed versions of hypothetically larger neural networks where each neuron represents a single concept (see [Figure 5](#fig:polysemanticity)). Consequently, an alternative definition of features could be:
@@ -552,7 +551,7 @@ Recent advancements have focused on improving sparse autoencoder performance and
 
 <div class="explanation-box">
   <h4 class="explanation-title">Sparse Dictionary Learning</h4>
-  <p class="explanation-content">
+  <div class="explanation-content">
     Sparse autoencoders <d-cite key="cunningham_sparse_2024"></d-cite> represent a solution attempt to the challenge of {% term polysemantic %} neurons. The problem of {% term superposition %} is mathematically formalized as <em>sparse dictionary learning</em> <d-cite key="olshausen_sparse_1997"></d-cite> problem to decompose neural network activations into {% term disentangled %} component features. 
     
     The goal is to learn a dictionary of vectors $\{\mathbf{f}_k\}_{k=1}^{n_{\text{feat}}} \subset \mathbb{R}^d$ that can represent the unknown, ground truth network features as sparse linear combinations. If successful, the learned dictionary contains {% term monosemantic %} neurons corresponding to {% term features %} <d-cite key="sharkey_taking_2022"></d-cite>.
@@ -591,7 +590,7 @@ Recent advancements have focused on improving sparse autoencoder performance and
         <a href="{{site.baseurl}}/assets/img/posts/2024-07-11-mechinterpreview/sae.pdf" target="_blank">(View PDF)</a>
       </figcaption>
     </figure>
-  </p>
+  </div>
 </div>
 
 ### Intervention

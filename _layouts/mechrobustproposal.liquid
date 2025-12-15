@@ -84,8 +84,20 @@
   </d-front-matter>
 
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+
+	<style>
+
+	body {
+	    --global-theme-color: #C23175;
+	    --global-hover-color: #FEAE00;
+	    --global-code-bg-color: #F4FBF9;
+	  }
+
+  	</style>
+
+
     <!-- Header -->
-    {% include header.liquid %}
+    {% comment %} {% include header.liquid %} {% endcomment %}
 
     <!-- Content -->
     <div class="post distill">
