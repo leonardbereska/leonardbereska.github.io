@@ -173,8 +173,8 @@ To understand how neural networks represent more features than they have dimensi
 <div>
 <p></p>
 <div class="math-block" style="text-align: center;">
-$\mathbf{x} = \mathbf{W}_{\text{toy}}\mathbf{f}, \quad \mathbf{f'} = \text{ReLU}(\mathbf{W}_{\text{toy}}^T\mathbf{x} + \mathbf{b})$
-</div>
+$\mathbf{x} = \mathbf{W}_{\text{toy}}\mathbf{f}, \quad \mathbf{f'} = \text{ReLU}(\mathbf{W}_{\text{toy}}^T\mathbf{x} + \mathbf{b})$ <span style="float: right;">(1)</span>
+</div> 
 <p></p>
 </div>
 
@@ -189,7 +189,7 @@ Elhage *et al.* <d-cite key="elhage_toy_2022"></d-cite> proposed measuring "dime
 <div id="eq:frobenius">
 <p></p>
 <div class="math-block" style="text-align: center;">
-$\psi_{\text{Frob}} = \frac{\lVert \mathbf{W}_{\text{toy}}\rVert_{\text{Frob}}^2}{N}$ <span style="float: right;">(1)</span>
+$\psi_{\text{Frob}} = \frac{\lVert \mathbf{W}_{\text{toy}}\rVert_{\text{Frob}}^2}{N}$ <span style="float: right;">(2)</span>
 </div>
 <p></p>
 </div>
@@ -205,7 +205,7 @@ Given layer activations $\mathbf{x} \in \mathbb{R}^N$, an SAE learns a higher-di
 <div>
 <p></p>
 <div class="math-block" style="text-align: center;">
-$\mathbf{z} = \text{ReLU}(\mathbf{W}_{\text{enc}}\mathbf{x} + \mathbf{b})$
+$\mathbf{z} = \text{ReLU}(\mathbf{W}_{\text{enc}}\mathbf{x} + \mathbf{b})$ <span style="float: right;">(3)</span>
 </div>
 <p></p>
 </div>
@@ -215,7 +215,7 @@ The reconstruction combines these sparse features:
 <div>
 <p></p>
 <div class="math-block" style="text-align: center;">
-$\mathbf{x'} = \mathbf{W}_{\text{dec}}\mathbf{z} = \sum_{i=1}^D z_i \mathbf{d}_i$
+$\mathbf{x'} = \mathbf{W}_{\text{dec}}\mathbf{z} = \sum_{i=1}^D z_i \mathbf{d}_i$ <span style="float: right;">(4)</span>
 </div>
 <p></p>
 </div>
@@ -227,7 +227,7 @@ Training balances faithful reconstruction against sparse activation:
 <div>
 <p></p>
 <div class="math-block" style="text-align: center;">
-$\mathcal{L}(\mathbf{x}, \mathbf{z}) = \lVert \mathbf{x} - \mathbf{x'}\rVert_2^2 + \lambda \lVert \mathbf{z}\rVert_1$
+$\mathcal{L}(\mathbf{x}, \mathbf{z}) = \lVert \mathbf{x} - \mathbf{x'}\rVert_2^2 + \lambda \lVert \mathbf{z}\rVert_1$ <span style="float: right;">(5)</span>
 </div>
 <p></p>
 </div>
@@ -249,39 +249,29 @@ We formalize superposition as the compression ratio $\psi = F/N$, where $N$ coun
 <div>
 <p></p>
 <div class="math-block" style="text-align: center;">
-$p_i = \frac{\sum_{s=1}^S \lvert z_{i,s}\rvert}{\sum_{j=1}^D \sum_{s=1}^S \lvert z_{j,s}\rvert} = \frac{\text{budget allocated to feature } i}{\text{total representational budget}}$
+$p_i = \frac{\sum_{s=1}^S \lvert z_{i,s}\rvert}{\sum_{j=1}^D \sum_{s=1}^S \lvert z_{j,s}\rvert} = \frac{\text{budget allocated to feature } i}{\text{total representational budget}}$ <span style="float: right;">(6)</span>
 </div>
 <p></p>
 </div>
 
 The SAE's $\ell_1$ regularization ensures these allocations reflect computational importance. Features activating more frequently or strongly consume more capacity, with optimal $\lvert z_i\rvert$ proportional to marginal contribution to reconstruction quality (derivation in [Appendix](#l1-norm-budget)).
 
-**Effective features as lossless compression limit.** Shannon entropy quantifies the information content of this distribution:
+**Effective features as lossless compression limit.** Shannon entropy quantifies the information content of this distribution $H(p) = -\sum\_i p\_i \log p\_i$. Its exponential:
 
 <div>
 <p></p>
 <div class="math-block" style="text-align: center;">
-$H(p) = -\sum_i p_i \log p_i$
+$F = e^{H(p)}$ <span style="float: right;">(7)</span>
 </div>
 <p></p>
 </div>
 
-Its exponential measures effective degrees of freedom, the minimum neurons needed to encode $p$ without interference:
-
-<div>
-<p></p>
-<div class="math-block" style="text-align: center;">
-$F = e^{H(p)}$
-</div>
-<p></p>
-</div>
-
-This is the network's lossless compression limit: the feature distribution could be transmitted through $F$ neurons with no information loss. Using fewer than $F$ neurons guarantees interference as features must share dimensions; using exactly $F$ achieves the interference-free boundary. The actual layer width $N$ determines whether compression remains lossless ($N \geq F$) or becomes lossy ($N < F$). The ratio then measures superposition as lossy compression:
+measures effective degrees of freedom, the minimum neurons needed to encode $p$ without interference. This is the network's lossless compression limit: the feature distribution could be transmitted through $F$ neurons with no information loss. Using fewer than $F$ neurons guarantees interference as features must share dimensions; using exactly $F$ achieves the interference-free boundary. The actual layer width $N$ determines whether compression remains lossless ($N \geq F$) or becomes lossy ($N < F$). The ratio then measures superposition as lossy compression:
 
 <div>
 <p></p>
 <div class="math-block" style="text-align: center;">
-$\psi = \frac{F}{N}$
+$\psi = \frac{F}{N}$ <span style="float: right;">(8)</span>
 </div>
 <p></p>
 </div>
@@ -323,7 +313,7 @@ We validate our measure using the toy model of superposition <d-cite key="elhage
 
 Following Elhage *et al.* <d-cite key="elhage_toy_2022"></d-cite>, we generate 100 toy models with sparsity $S \in [0.001, 0.999]$. Each model compresses 20 features through a 5-neuron bottleneck, with importance weights decaying as $\omega_i = 0.7^i$. After training to convergence, we extract 10,000 activation samples and train SAEs with 40-dimensional dictionaries (8× expansion) and $\ell_1$ coefficient 0.1. This two-stage process mimics real-world measurement where ground truth remains unknown.
 
-**Validation strategy.** Our validation proceeds in two steps. First, we establish reference values by measuring superposition directly from $\mathbf{W}\_{\text{toy}}$, where the interference matrix $\mathbf{W}\_{\text{toy}}^T \mathbf{W}\_{\text{toy}}$ reveals compression levels: diagonal dominance indicates orthogonal features; off-diagonal terms show interference (<a href="#fig:superposition_framework" class="figure-ref">Figure 2b</a>). Both our entropy-based measure and the Frobenius norm baseline (<a href="#eq:frobenius">Equation 1</a>) achieve near-perfect correlation ($r = 0.99 \pm 0.01$) when applied to toy model weights, confirming both track these observable patterns (<a href="#fig:metric_validation" class="figure-ref">Figure 3a</a>).
+**Validation strategy.** Our validation proceeds in two steps. First, we establish reference values by measuring superposition directly from $\mathbf{W}\_{\text{toy}}$, where the interference matrix $\mathbf{W}\_{\text{toy}}^T \mathbf{W}\_{\text{toy}}$ reveals compression levels: diagonal dominance indicates orthogonal features; off-diagonal terms show interference (<a href="#fig:superposition_framework" class="figure-ref">Figure 2b</a>). Both our entropy-based measure and the Frobenius norm baseline (<a href="#eq:frobenius">Equation 2</a>) achieve near-perfect correlation ($r = 0.99 \pm 0.01$) when applied to toy model weights, confirming both track these observable patterns (<a href="#fig:metric_validation" class="figure-ref">Figure 3a</a>).
 
 Second, we test whether each metric recovers these reference values when given only SAE outputs, the realistic scenario for measuring real networks. Here the Frobenius norm fails catastrophically on SAE weights, producing nonlinear relationships and incorrect scales (0.1–0.7 versus expected 1–4); the $\ell_1$ regularization fundamentally alters weight statistics. Our activation-based approach maintains strong correlation ($r = 0.94 \pm 0.02$) with the reference values even through the SAE bottleneck.
 
